@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | TX POSTS</title>
+    <link rel="icon" href="https://storage.googleapis.com/msgsndr/YMTBFGIe6LTatpFGulrT/media/695d544322afaa2dcbccd993.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f2847;
+        }
+    </style>
+</head>
+<body>
+<!-- 
+    TX POSTS GHL READY COMPONENT
+    Cleaned & Repaired version of: pricing.html
+    Generated: 2026-01-27
+-->
+
+<style>
+    :root {
+        /* TX POST Brand Colors */
+        --navy: #1A3A6E;
+        --navy-dark: #0F2847;
+        --texas-red: #BF0A30;
+        --texas-red-dark: #8B0722;
+        --white: #FFFFFF;
+        --off-white: #F8F9FA;
+        --light-gray: #E9ECEF;
+        --medium-gray: #6C757D;
+        --dark-gray: #343A40;
+        --black: #1A1A1A;
+
+        /* Typography */
+        --font-display: 'Bebas Neue', sans-serif;
+        --font-body: 'Plus Jakarta Sans', sans-serif;
+
+        /* Spacing */
+        --section-padding: 100px;
+        --container-max: 1200px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+        /* Fixed: Added for sticky nav anchor links */
+    }
+
+    #tx-post-ghl-wrapper {
+        font-family: var(--font-body);
+        color: var(--black);
+        line-height: 1.6;
+        background: var(--white);
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Fixed: Added for mobile menu */
+    #tx-post-ghl-wrapper.menu-open {
+        overflow: hidden;
+    }
+
+    /* ========== NAVIGATION ========== */
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--navy);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .nav.scrolled {
+        background: var(--navy-dark);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+    }
+
+    .nav-logo img {
+        height: 50px;
+        width: auto;
+    }
+
+    .nav-logo-text {
+        font-family: var(--font-display);
+        font-size: 28px;
+        color: var(--white);
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--white);
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.2s ease;
+        position: relative;
+    }
+
+    .nav-links a:hover {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--texas-red);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-cta {
+        background: var(--texas-red);
+        color: var(--white) !important;
+        padding: 12px 28px;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s ease !important;
+    }
+
+    .nav-cta:hover {
+        background: var(--texas-red-dark) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(191, 10, 48, 0.3);
+    }
+
+    .nav-cta::after {
+        display: none !important;
+    }
+
+    /* Mobile menu button - Fixed: proper touch targets */
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--white);
+        margin: 6px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+        overflow: hidden;
+        padding-top: 80px;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.5;
+    }
+
+    /* Texas star decoration */
+    .hero-star {
+        position: absolute;
+        right: -100px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 600px;
+        height: 600px;
+        opacity: 0.05;
+    }
+
+    .hero-container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-content {
+        animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 8px 16px;
+        border-radius: 50px;
+        margin-bottom: 24px;
+        animation: fadeInUp 0.8s ease 0.1s forwards;
+        opacity: 0;
+    }
+
+    .hero-badge-dot {
+        width: 8px;
+        height: 8px;
+        background: #4ADE80;
+        border-radius: 50%;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .hero-badge span {
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(48px, 8vw, 80px);
+        color: var(--white);
+        line-height: 0.95;
+        margin-bottom: 24px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 .highlight {
+        color: var(--texas-red);
+        position: relative;
+        display: inline-block;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 40px;
+        max-width: 500px;
+        line-height: 1.7;
+        animation: fadeInUp 0.8s ease 0.3s forwards;
+        opacity: 0;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.8s ease 0.4s forwards;
+        opacity: 0;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+        min-height: 52px;
+    }
+
+    .btn-primary {
+        background: var(--texas-red);
+        color: var(--white);
+    }
+
+    .btn-primary:hover {
+        background: var(--texas-red-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(191, 10, 48, 0.4);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-secondary:hover {
+        border-color: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero Image/Visual */
+    .hero-visual {
+        position: relative;
+        animation: fadeInUp 0.8s ease 0.5s forwards;
+        opacity: 0;
+    }
+
+    .hero-image-container {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .hero-image-placeholder {
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(135deg, #2d5a9e 0%, #1a3a6e 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .hero-image-placeholder svg {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+
+    .hero-image-placeholder p {
+        font-size: 14px;
+        opacity: 0.7;
+    }
+
+    /* Floating stats card */
+    .hero-stats-card {
+        position: absolute;
+        bottom: -30px;
+        left: -30px;
+        background: var(--white);
+        padding: 24px 32px;
+        border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        display: flex;
+        gap: 32px;
+    }
+
+    .hero-stat {
+        text-align: center;
+    }
+
+    .hero-stat-number {
+        font-family: var(--font-display);
+        font-size: 36px;
+        color: var(--navy);
+        line-height: 1;
+    }
+
+    .hero-stat-label {
+        font-size: 13px;
+        color: var(--medium-gray);
+        margin-top: 4px;
+    }
+
+    /* ========== TRUST BAR ========== */
+    .trust-bar {
+        background: var(--off-white);
+        padding: 40px 0;
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .trust-bar-container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 24px;
+        text-align: center;
+    }
+
+    .trust-bar-label {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--medium-gray);
+        margin-bottom: 24px;
+        font-weight: 600;
+    }
+
+    .trust-logos {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+        opacity: 0.6;
+    }
+
+    .trust-logo {
+        font-family: var(--font-display);
+        font-size: 24px;
+        color: var(--dark-gray);
+        letter-spacing: 1px;
+    }
+
+    /* ========== SERVICES SECTION ========== */
+    .services {
+        padding: var(--section-padding) 0;
+        background: var(--white);
+    }
+
+    .container {
+        max-width: var(--container-max);
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+    }
+
+    .section-tag {
+        display: inline-block;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: var(--texas-red);
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 5vw, 52px);
+        color: var(--navy);
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+        color: var(--medium-gray);
+        line-height: 1.7;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+    }
+
+    .service-card {
+        background: var(--white);
+        border: 1px solid var(--light-gray);
+        border-radius: 16px;
+        padding: 40px 32px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--texas-red);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: transparent;
+    }
+
+    .service-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .service-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+    }
+
+    .service-icon svg {
+        width: 32px;
+        height: 32px;
+        stroke: var(--white);
+    }
+
+    .service-card h3 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        color: var(--navy);
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+    }
+
+    .service-card p {
+        color: var(--medium-gray);
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* ========== HOW IT WORKS ========== */
+    .how-it-works {
+        padding: var(--section-padding) 0;
+        background: var(--navy);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .how-it-works::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .how-it-works .section-tag {
+        color: var(--texas-red);
+    }
+
+    .how-it-works .section-title {
+        color: var(--white);
+    }
+
+    .how-it-works .section-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .steps-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .step {
+        text-align: center;
+        position: relative;
+    }
+
+    .step-number {
+        width: 80px;
+        height: 80px;
+        background: var(--texas-red);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        font-family: var(--font-display);
+        font-size: 36px;
+        color: var(--white);
+        position: relative;
+        z-index: 2;
+    }
+
+    .step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: calc(50% + 50px);
+        width: calc(100% - 100px);
+        height: 2px;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .step h3 {
+        font-family: var(--font-display);
+        font-size: 22px;
+        color: var(--white);
+        margin-bottom: 12px;
+        letter-spacing: 1px;
+    }
+
+    .step p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* ========== PRICING SECTION ========== */
+    .pricing {
+        padding: var(--section-padding) 0;
+        background: var(--off-white);
+    }
+
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 32px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .pricing-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 48px 40px;
+        text-align: center;
+        position: relative;
+        border: 2px solid var(--light-gray);
+        transition: all 0.3s ease;
+    }
+
+    .pricing-card.featured {
+        border-color: var(--texas-red);
+        transform: scale(1.05);
+    }
+
+    .pricing-card.featured::before {
+        content: 'MOST POPULAR';
+        position: absolute;
+        top: -14px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--texas-red);
+        color: var(--white);
+        padding: 6px 20px;
+        border-radius: 50px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .pricing-card:hover {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+    }
+
+    .pricing-icon svg {
+        width: 40px;
+        height: 40px;
+        stroke: var(--white);
+    }
+
+    .pricing-card h3 {
+        font-family: var(--font-display);
+        font-size: 28px;
+        color: var(--navy);
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+    }
+
+    .pricing-card .price {
+        font-family: var(--font-display);
+        font-size: 64px;
+        color: var(--texas-red);
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .pricing-card .price-note {
+        color: var(--medium-gray);
+        font-size: 14px;
+        margin-bottom: 32px;
+    }
+
+    .pricing-features {
+        list-style: none;
+        text-align: left;
+        margin-bottom: 32px;
+    }
+
+    .pricing-features li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--light-gray);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--dark-gray);
+        font-size: 16px;
+    }
+
+    .pricing-features li:last-child {
+        border-bottom: none;
+    }
+
+    .pricing-features li svg {
+        width: 20px;
+        height: 20px;
+        stroke: #4ADE80;
+        flex-shrink: 0;
+    }
+
+    .pricing-card .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ========== ADD-ONS SECTION ========== */
+    .addons-section {
+        padding: 60px 0;
+        background: var(--light-bg);
+    }
+
+    .addons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .addon-card {
+        background: var(--white);
+        padding: 32px 24px;
+        border-radius: 12px;
+        text-align: center;
+        border: 2px solid var(--light-gray);
+        transition: all 0.3s ease;
+    }
+
+    .addon-card:hover {
+        border-color: var(--texas-red);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .addon-icon {
+        width: 60px;
+        height: 60px;
+        background: rgba(191, 10, 48, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+    }
+
+    .addon-icon svg {
+        width: 30px;
+        height: 30px;
+        stroke: var(--texas-red);
+    }
+
+    .addon-card h3 {
+        font-family: var(--font-display);
+        font-size: 20px;
+        color: var(--navy);
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .addon-price {
+        font-family: var(--font-display);
+        font-size: 36px;
+        color: var(--texas-red);
+        line-height: 1;
+        margin-bottom: 16px;
+    }
+
+    .addon-card p {
+        color: var(--medium-gray);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .addons-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* ========== SERVICE AREA MAP ========== */
+    .service-area {
+        padding: var(--section-padding) 0;
+        background: var(--white);
+    }
+
+    .service-area-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .service-area-text h2 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 5vw, 48px);
+        color: var(--navy);
+        margin-bottom: 24px;
+        letter-spacing: 1px;
+    }
+
+    .service-area-text p {
+        color: var(--medium-gray);
+        font-size: 17px;
+        line-height: 1.8;
+        margin-bottom: 32px;
+    }
+
+    .service-cities {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 32px;
+    }
+
+    .service-city {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--dark-gray);
+        font-size: 16px;
+    }
+
+    .service-city svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--texas-red);
+    }
+
+    .map-container {
+        background: var(--light-gray);
+        border-radius: 20px;
+        overflow: hidden;
+        height: 500px;
+        position: relative;
+    }
+
+    .map-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+        color: var(--medium-gray);
+        text-align: center;
+        padding: 40px;
+    }
+
+    .map-placeholder svg {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        stroke: var(--navy);
+        opacity: 0.5;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+        padding: var(--section-padding) 0;
+        background: var(--navy);
+        position: relative;
+    }
+
+    .testimonials .section-tag,
+    .testimonials .section-title {
+        color: var(--white);
+    }
+
+    .testimonials .section-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .testimonial-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 40px;
+        position: relative;
+    }
+
+    .testimonial-card::before {
+        content: '"';
+        font-family: Georgia, serif;
+        font-size: 120px;
+        color: var(--texas-red);
+        opacity: 0.3;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        line-height: 1;
+    }
+
+    .testimonial-text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        background: var(--texas-red);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-size: 20px;
+        color: var(--white);
+    }
+
+    .testimonial-info h4 {
+        color: var(--white);
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .testimonial-info p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 14px;
+    }
+
+    .testimonial-placeholder {
+        text-align: center;
+        padding: 60px 40px;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .testimonial-placeholder svg {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+        opacity: 0.4;
+    }
+
+    /* ========== CTA SECTION ========== */
+    .cta {
+        padding: var(--section-padding) 0;
+        background: var(--off-white);
+        text-align: center;
+    }
+
+    .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .cta h2 {
+        font-family: var(--font-display);
+        font-size: clamp(36px, 5vw, 56px);
+        color: var(--navy);
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .cta p {
+        font-size: 18px;
+        color: var(--medium-gray);
+        margin-bottom: 40px;
+        line-height: 1.7;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta .btn-secondary {
+        border-color: var(--navy);
+        color: var(--navy);
+    }
+
+    .cta .btn-secondary:hover {
+        background: var(--navy);
+        color: var(--white);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+        background: var(--navy-dark);
+        color: var(--white);
+        padding: 80px 0 40px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 60px;
+    }
+
+    .footer-brand p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        line-height: 1.7;
+        margin-top: 20px;
+        max-width: 300px;
+    }
+
+    .footer h4 {
+        font-family: var(--font-display);
+        font-size: 18px;
+        margin-bottom: 24px;
+        letter-spacing: 1px;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+        color: var(--white);
+    }
+
+    .footer-contact p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .footer-contact a {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 14px;
+    }
+
+    .footer-legal {
+        display: flex;
+        gap: 24px;
+    }
+
+    .footer-legal a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+        color: var(--white);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 1024px) {
+        .hero-container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .hero-content {
+            order: 1;
+        }
+
+        .hero-visual {
+            order: 2;
+        }
+
+        .hero-subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .hero-stats-card {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .steps-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .step:not(:last-child)::after {
+            display: none;
+        }
+
+        .service-area-content {
+            grid-template-columns: 1fr;
+        }
+
+        .testimonials-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        :root {
+            --section-padding: 60px;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            height: calc(100dvh - 80px);
+            background: white;
+            flex-direction: column;
+            padding: 40px 24px;
+            transition: left 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .nav-links.active {
+            left: 0;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .hero {
+            min-height: auto;
+            padding: 120px 0 80px;
+        }
+
+        .hero-image-placeholder,
+        .hero-image {
+            height: 300px;
+        }
+
+        .hero-stats-card {
+            flex-direction: column;
+            gap: 20px;
+            padding: 24px;
+        }
+
+        .steps-container {
+            grid-template-columns: 1fr;
+        }
+
+        .pricing-card.featured {
+            transform: none;
+        }
+
+        .service-cities {
+            grid-template-columns: 1fr;
+        }
+
+        .map-container {
+            height: 300px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+    }
+
+    /* Page-specific tweaks */
+    .page-hero {
+        padding-top: 140px;
+        padding-bottom: 80px;
+        background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .page-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(48px, 8vw, 72px);
+        color: var(--white);
+        line-height: 0.95;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+    }
+
+    .page-hero p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto 28px;
+    }
+
+    .page-hero .hero-buttons {
+        justify-content: center;
+    }
+
+    .page-hero .container {
+        text-align: center;
+    }
+
+    .pill-row {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 18px;
+    }
+
+    .pill {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.85);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .two-col {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .info-card {
+        background: var(--white);
+        border: 1px solid var(--light-gray);
+        border-radius: 16px;
+        padding: 28px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+        position: sticky;
+        top: 110px;
+    }
+
+    .info-card h3 {
+        font-family: var(--font-display);
+        font-size: 26px;
+        color: var(--navy);
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+    }
+
+    .info-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--light-gray);
+        color: var(--dark-gray);
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .info-list li:last-child {
+        border-bottom: none;
+    }
+
+    .info-k {
+        color: var(--medium-gray);
+        font-weight: 600;
+    }
+
+    .faq-mini {
+        background: var(--off-white);
+        border: 1px solid var(--light-gray);
+        border-radius: 16px;
+        padding: 24px;
+    }
+
+    .faq-mini h3 {
+        font-family: var(--font-display);
+        font-size: 24px;
+        color: var(--navy);
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .faq-mini p {
+        color: var(--medium-gray);
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .faq-mini .btn {
+        margin-top: 16px;
+    }
+
+    @media (max-width: 1024px) {
+        .two-col {
+            grid-template-columns: 1fr;
+        }
+
+        .info-card {
+            position: static;
+        }
+    }
+</style>
+
+<div id="tx-post-ghl-wrapper">
+
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo" aria-label="TX POSTS Home">
+                <!-- Fixed: Added width/height attributes to prevent CLS -->
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png"
+                    alt="TX POSTS" width="200" height="80" loading="eager">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/services">Services</a></li>
+                <li><a href="/pricing" aria-current="page">Pricing</a></li>
+                <li><a href="/#service-area">Service Area</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/order" class="nav-cta">Request Install</a></li>
+            </ul>
+            <!-- Fixed: Added mobile menu button with proper aria labels -->
+            <button class="mobile-menu-btn" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>PRICING<br><span class="highlight" style="color: var(--texas-red);">SIMPLE + CLEAR</span></h1>
+            <p>Two straightforward options. No contracts. No weird fine print. Just sign post service that shows up and
+                gets it done.</p>
+            <div class="hero-buttons" style="display:flex; gap:16px; flex-wrap:wrap;">
+                <a href="/order" class="btn btn-primary">Order / Schedule Service</a>
+                <a href="#packages" class="btn btn-secondary">See Packages</a>
+            </div>
+            <div class="pill-row" aria-label="Pricing highlights">
+                <span class="pill">Wood post: panel + riders included</span>
+                <span class="pill">Your metal frame: discounted rate</span>
+                <span class="pill">Removal options available</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Packages</span>
+                <h2 class="section-title">CHOOSE YOUR POST TYPE</h2>
+                <p class="section-subtitle">Choose your setup and submit your request. We'll confirm the schedule window.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- $65 OPTIONS -->
+                <div class="pricing-card featured" id="wood">
+                    <div class="pricing-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>TX POSTS WOOD POST</h3>
+                    <div class="price">$65</div>
+                    <p class="price-note">We provide. Free maintenance.</p>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Professional 4x4 wood post</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Panel & rider hanging included</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>FREE removal when sold</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>FREE maintenance & repairs</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Sign storage available</li>
+                    </ul>
+                    <a href="/order" class="btn btn-primary">Request Installation</a>
+                </div>
+
+                <div class="pricing-card" id="pvc">
+                    <div class="pricing-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>YOUR PVC/ALUMINUM POST</h3>
+                    <div class="price">$65</div>
+                    <p class="price-note">You supply. $45 maintenance if needed.</p>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>You supply the post</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Professional installation</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>FREE removal when sold</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>$45 maintenance if needed</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Sign storage available</li>
+                    </ul>
+                    <a href="/order" class="btn btn-primary">Request Installation</a>
+                </div>
+
+                <!-- $55 OPTIONS -->
+                <div class="pricing-card" id="metal">
+                    <div class="pricing-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h3>YOUR METAL FRAME</h3>
+                    <div class="price">$55</div>
+                    <p class="price-note">You supply. We store. $35 maintenance if needed.</p>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>You supply the metal frame</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Professional installation</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>We can store your frame</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>FREE removal when sold</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>$35 maintenance if needed</li>
+                    </ul>
+                    <a href="/order" class="btn btn-primary">Request Installation</a>
+                </div>
+
+                <!-- $60 OPTIONS -->
+                <div class="pricing-card" id="custom">
+                    <div class="pricing-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <h3>YOUR CUSTOM POSTS</h3>
+                    <div class="price">$60</div>
+                    <p class="price-note">Specialty posts. $40 maintenance if needed.</p>
+                    <ul class="pricing-features">
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Non-standard metal frames</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Specialty staked posts</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>Professional installation</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>FREE removal when sold</li>
+                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>$40 maintenance if needed</li>
+                    </ul>
+                    <a href="/order" class="btn btn-primary">Request Installation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-Ons Section -->
+    <section class="addons-section" id="addons">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Optional Add-Ons</span>
+                <h2 class="section-title">UPGRADE YOUR SIGN INSTALLATION</h2>
+                <p class="section-subtitle">Add these at install time—no need to schedule separately.</p>
+            </div>
+
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3>SOLAR LIGHT</h3>
+                    <div class="addon-price">$15</div>
+                    <p>Illuminates your sign at night. Solar-powered, no wiring needed. Weather-resistant.</p>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>BROCHURE BOX</h3>
+                    <div class="addon-price">$15</div>
+                    <p>Weather-proof box attaches to post. Holds your listing brochures or flyers for buyers.</p>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>LOCKBOX</h3>
+                    <div class="addon-price">$10</div>
+                    <p>Secure key storage for showing access. Mounts to post. Supra-compatible.</p>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <path d="M14 2v6h6"></path>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <line x1="10" y1="9" x2="8" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3>ADDITIONAL RIDERS</h3>
+                    <div class="addon-price">$10</div>
+                    <p>Need more than one rider? Add extra riders for just $10 each. First rider is included.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="details" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header" style="margin-top: 0;">
+                <span class="section-tag">Details</span>
+                <h2 class="section-title">WHAT'S INCLUDED (AND WHAT ISN'T)</h2>
+                <p class="section-subtitle">Real-world notes so you don't get surprised in the field.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <path d="M12 2l7 7-7 7-7-7 7-7z"></path>
+                            <path d="M12 16v6"></path>
+                        </svg></div>
+                    <h3>PLACEMENT</h3>
+                    <p>We place for visibility and common-sense curb appeal. If your HOA/city requires a specific spot,
+                        note it in the order.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg></div>
+                    <h3>RUSH REQUESTS</h3>
+                    <p>Rush depends on schedule and location. Submit the order with "Rush" selected/mentioned and we'll
+                        confirm availability.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg></div>
+                    <h3>NOTES MATTER</h3>
+                    <p>Gate codes, lot flags, lockbox instructions, builder restrictions—put it all in the order form
+                        notes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <path d="M20 6L9 17l-5-5"></path>
+                        </svg></div>
+                    <h3>CONFIRMATION</h3>
+                    <p>You'll receive confirmation once the request is reviewed. That's your "it's scheduled" signal.
+                    </p>
+                </div>
+            </div>
+
+            <section class="cta" id="pricing-cta">
+                <div class="container">
+                    <div class="cta-content">
+                        <span class="section-tag">Ready to schedule?</span>
+                        <h2>SUBMIT YOUR ORDER</h2>
+                        <p>Pick your package, drop the address, and we'll take it from there.</p>
+                        <div class="cta-buttons">
+                            <a href="/order" class="btn btn-primary">Request Installation</a>
+                            <a href="/services" class="btn btn-secondary">View Services</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo" aria-label="TX POSTS Home">
+                        <!-- Fixed: Added width/height attributes -->
+                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png"
+                            alt="TX POSTS" width="200" height="80" loading="lazy" style="height: 50px;">
+                    </a>
+                    <p>Professional real estate sign post installation serving Tarrant County and the greater
+                        Dallas-Fort Worth area for over 18 years.</p>
+                </div>
+                <div>
+                    <h4>QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/order">Order / Schedule</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>SERVICES</h4>
+                    <ul class="footer-links">
+                        <li><a href="/services#post-installation">Post Installation</a></li>
+                        <li><a href="/services#post-removal">Post Removal</a></li>
+                        <li><a href="/services#panel-riders">Panel & Rider Hanging</a></li>
+                        <li><a href="/services#rush-service">Rush Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>CONTACT</h4>
+                    <!-- Fixed: Phone link to E.164 format -->
+                    <p>Phone: <a href="tel:+18177608288">(817) 760-8288</a></p>
+                    <p>Email: <a href="/cdn-cgi/l/email-protection#6f1c1a1f1f001d1b2f1b171f001c1b1c410c0002"><span
+                                class="__cf_email__"
+                                data-cfemail="c3b0b6b3b3acb1b783b7bbb3acb0b7b0eda0acae">[email&#160;protected]</span></a>
+                    </p>
+                    <p>Tarrant County, Texas</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 TX POSTS. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+<script>
+
+
+    // Navbar scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+
+    // Smooth scroll for same-page anchors only
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            const target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    function ensureViewportMetaTag() {
+        if (document.querySelector('meta[name="viewport"]')) return;
+        const meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0';
+        document.head.appendChild(meta);
+    }
+    ensureViewportMetaTag();
+
+    const mobileMenuBtn = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const menuScope = document.getElementById('tx-post-ghl-wrapper') || document.body;
+
+    function setMobileMenuOpen(isOpen) {
+        if (!mobileMenuBtn || !navLinks) return;
+        navLinks.classList.toggle('active', isOpen);
+        menuScope.classList.toggle('menu-open', isOpen);
+        mobileMenuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    }
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function () {
+            setMobileMenuOpen(!navLinks.classList.contains('active'));
+        });
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                setMobileMenuOpen(false);
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') setMobileMenuOpen(false);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768 && !e.target.closest('.nav-container')) {
+                setMobileMenuOpen(false);
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) setMobileMenuOpen(false);
+        });
+
+        setMobileMenuOpen(false);
+    }
+</script>
+</body>
+</html>

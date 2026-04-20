@@ -1,0 +1,3617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Service | TX POSTS</title>
+    <link rel="icon" href="https://storage.googleapis.com/msgsndr/YMTBFGIe6LTatpFGulrT/media/695d544322afaa2dcbccd993.png">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #0f2847;
+        }
+    </style>
+</head>
+<body>
+<!-- TX POSTS Request Form - GHL Custom Code Element Version -->
+<!-- ============================================================= -->
+<!-- GHL SETUP INSTRUCTIONS:                                        -->
+<!-- 1. Create a new Funnel or Website page (blank template)        -->
+<!-- 2. In Page Settings > General, set page title to               -->
+<!--    "Request Service | TX POSTS"                                -->
+<!-- 3. (Recommended) In Page Settings > Custom Code > Header Code, -->
+<!--    paste: <meta name="viewport" content="width=device-width,   -->
+<!--    initial-scale=1.0">                                         -->
+<!--    (This file also auto-injects viewport meta if missing.)     -->
+<!-- 4. Set the page BACKGROUND to a gradient:                      -->
+<!--    From: #0F2847  To: #1A3A6E  Direction: 135 degrees          -->
+<!-- 5. Set page body font to "Plus Jakarta Sans" (Google Font)     -->
+<!-- 6. Add ONE "Custom Code" element to the page                   -->
+<!-- 7. Paste this ENTIRE file contents into that element            -->
+<!-- 8. Save and preview — that's it!                               -->
+<!-- ============================================================= -->
+<style>
+        /* Google Fonts loaded via @import since we can't use <link> inside a code element */
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        :root {
+            --navy: #1A3A6E;
+            --navy-dark: #0F2847;
+            --texas-red: #BF0A30;
+            --texas-red-dark: #8B0722;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --black: #1A1A1A;
+            --success: #10B981;
+            --warning: #F59E0B;
+            
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --nav-height-desktop: 80px;
+            --nav-height-mobile: 64px;
+        }
+
+        /* ========== GLOBAL RESET (consolidated - was duplicated) ========== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* NOTE: In GHL, set your page background to a gradient from #0F2847 to #1A3A6E */
+        /* These styles are scoped to the wrapper div, not body, for GHL compatibility */
+        .txposts-form-wrapper {
+            font-family: var(--font-body);
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+            padding-top: calc(var(--nav-height-desktop) + 40px);
+            padding-right: 20px;
+            padding-bottom: 24px;
+            padding-left: 20px;
+            padding-right: calc(20px + env(safe-area-inset-right));
+            padding-bottom: calc(24px + env(safe-area-inset-bottom));
+            padding-left: calc(20px + env(safe-area-inset-left));
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* ========== SITE NAV (MATCHES MAIN SITE - BLUE) ========== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--navy);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            height: 46px;
+            width: auto;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 26px;
+            color: var(--white);
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover { color: rgba(255, 255, 255, 0.8); }
+
+        .nav-cta {
+            background: var(--texas-red);
+            color: var(--white) !important;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.3s ease !important;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: var(--texas-red-dark) !important;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(191, 10, 48, 0.3);
+        }
+
+        /* MOBILE FIX: Hamburger menu for small screens */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            min-width: 44px;
+            min-height: 44px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-toggle svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--white);
+        }
+
+        /* ========== FOOTER (MATCHES MAIN SITE) ========== */
+        .footer {
+            width: 100%;
+            margin-top: 60px;
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 60px 0 32px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 320px;
+        }
+
+        .footer h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li { margin-bottom: 10px; }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s ease;
+            /* MOBILE FIX: Better touch targets for footer links */
+            display: inline-block;
+            padding: 4px 0;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact a { color: var(--white); text-decoration: none; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        .footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-legal a:hover { color: var(--white); }
+        
+        /* Main Form Container */
+        .form-wrapper {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            min-width: 0;
+        }
+        
+        /* Header */
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .form-header img {
+            height: 60px;
+            margin-bottom: 16px;
+        }
+        
+        .form-header h1 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .form-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 32px;
+            background: rgba(15, 40, 71, 0.78);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 14px;
+            padding: 16px 14px 10px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+        }
+        
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+            position: relative;
+        }
+        
+        .progress-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: calc(50% + 20px);
+            width: calc(100% - 40px);
+            height: 3px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .progress-step.completed:not(:last-child)::after {
+            background: var(--success);
+        }
+        
+        .step-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-step.active .step-number {
+            background: var(--texas-red);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .progress-step.completed .step-number {
+            background: var(--success);
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .progress-step.completed .step-number::after {
+            content: '\2713';
+        }
+        
+        .progress-step.completed .step-number span {
+            display: none;
+        }
+        
+        .step-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+        
+        .progress-step.active .step-label,
+        .progress-step.completed .step-label {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Form Card */
+        .form-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        
+        /* Form Steps */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .step-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--navy);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .step-subtitle {
+            color: var(--medium-gray);
+            font-size: 15px;
+            margin-bottom: 32px;
+        }
+        
+        /* Form Fields */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .form-row.single {
+            grid-template-columns: 1fr;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+        
+        .form-group label .required {
+            color: var(--texas-red);
+        }
+        
+        /* MOBILE FIX: Input font-size set to 16px to prevent iOS auto-zoom */
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--dark-gray);
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(26, 58, 110, 0.1);
+        }
+        
+        .form-group input.error,
+        .form-group select.error {
+            border-color: var(--texas-red);
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .form-group .helper-text {
+            font-size: 13px;
+            color: var(--medium-gray);
+            margin-top: 6px;
+        }
+        
+        .form-group .error-text {
+            font-size: 13px;
+            color: var(--texas-red);
+            margin-top: 6px;
+            display: none;
+        }
+        
+        .form-group.has-error .error-text {
+            display: block;
+        }
+        
+        /* Service Type Cards */
+        .service-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+            /* FIX: Force equal height children */
+            align-items: stretch;
+        }
+        
+        .service-option {
+            position: relative;
+            /* FIX: Fill grid cell so label can use height: 100% */
+            height: 100%;
+        }
+        
+        .service-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .service-option label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 16px;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+            /* MOBILE FIX: Ensure touch target is large enough */
+            min-height: 44px;
+            /* FIX: Equal height cards in grid rows */
+            height: 100%;
+            justify-content: center;
+        }
+        
+        .service-option label:hover {
+            border-color: var(--navy);
+            background: var(--off-white);
+        }
+        
+        .service-option input:checked + label {
+            border-color: var(--texas-red);
+            background: rgba(191, 10, 48, 0.05);
+        }
+        
+        .service-option .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--navy);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        
+        .service-option input:checked + label .service-icon {
+            background: var(--texas-red);
+        }
+        
+        .service-option .service-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+        }
+        
+        .service-option .service-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+        
+        .service-option .service-desc {
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+        
+        /* Post Type Selection */
+        .post-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+            /* FIX: Force equal height children */
+            align-items: stretch;
+        }
+        
+        .post-option {
+            position: relative;
+            /* FIX: Fill grid cell so label can use height: 100% */
+            height: 100%;
+        }
+        
+        .post-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .post-option label {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 44px;
+            /* FIX: Equal height cards in grid rows */
+            height: 100%;
+            justify-content: center;
+        }
+        
+        .post-option label:hover {
+            border-color: var(--navy);
+        }
+        
+        .post-option input:checked + label {
+            border-color: var(--texas-red);
+            background: rgba(191, 10, 48, 0.05);
+        }
+        
+        .post-option .post-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+        
+        .post-option .post-price {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--texas-red);
+            margin-bottom: 4px;
+        }
+        
+        .post-option .post-desc {
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+        
+        /* Add-ons */
+        .addons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+            /* FIX: Force equal height children */
+            align-items: stretch;
+        }
+        
+        /* Price Tier Labels */
+        .price-tier-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--medium-gray);
+            font-weight: 600;
+            margin-bottom: 12px;
+            margin-top: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .price-tier-label:first-of-type {
+            margin-top: 0;
+        }
+        
+        /* Info Button */
+        .info-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-left: 6px;
+            cursor: pointer;
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+            /* MOBILE FIX: Minimum touch target */
+            min-width: 44px;
+            min-height: 44px;
+            justify-content: center;
+        }
+        
+        .info-btn svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--medium-gray);
+            transition: stroke 0.2s ease;
+        }
+        
+        .info-btn:hover svg {
+            stroke: var(--texas-red);
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            display: none;
+            position: absolute;
+            z-index: 100;
+            left: 0;
+            right: 0;
+            top: calc(100% + 8px);
+        }
+        
+        .tooltip.active {
+            display: block;
+            animation: tooltipFadeIn 0.2s ease;
+        }
+        
+        @keyframes tooltipFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .tooltip-content {
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .tooltip-content strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--texas-red);
+        }
+        
+        .tooltip-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+        
+        .tooltip-close {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: var(--texas-red);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            min-height: 44px;
+        }
+        
+        .tooltip-close:hover {
+            background: var(--texas-red-dark);
+        }
+        
+        /* Add-on Items */
+        .addon-item {
+            position: relative;
+            /* FIX: Fill grid cell so label can use height: 100% */
+            height: 100%;
+        }
+        
+        .addon-item input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .addon-item label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 44px;
+            /* FIX: Equal height cards in grid rows */
+            height: 100%;
+        }
+        
+        .addon-item label:hover {
+            border-color: var(--navy);
+        }
+        
+        .addon-item input:checked + label {
+            border-color: var(--success);
+            background: rgba(16, 185, 129, 0.05);
+        }
+        
+        .addon-item .addon-check {
+            width: 22px;
+            height: 22px;
+            border: 2px solid var(--light-gray);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+        
+        .addon-item input:checked + label .addon-check {
+            background: var(--success);
+            border-color: var(--success);
+        }
+        
+        .addon-item .addon-check svg {
+            width: 14px;
+            height: 14px;
+            stroke: white;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        
+        .addon-item input:checked + label .addon-check svg {
+            opacity: 1;
+        }
+        
+        .addon-item .addon-info {
+            flex: 1;
+        }
+        
+        .addon-item .addon-name {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+        
+        .addon-item .addon-price {
+            font-size: 13px;
+            color: var(--texas-red);
+            font-weight: 600;
+        }
+
+        /* Rider Selector */
+        .rider-selector {
+            margin-top: 24px;
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .rider-selector-label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+        }
+
+        .rider-selector-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            gap: 12px;
+            align-items: stretch;
+        }
+
+        .rider-selector-item {
+            display: flex;
+            position: relative;
+            min-width: 0;
+        }
+
+        .rider-selector-item select {
+            width: 100%;
+            padding: 14px 44px 14px 16px;
+            border: 2px solid var(--light-gray);
+            border-radius: 10px;
+            font-family: var(--font-body);
+            /* MOBILE FIX: 16px prevents iOS zoom */
+            font-size: 16px;
+            color: var(--dark-gray);
+            background: var(--white);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236C757D' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            /* FIX: Taller min-height so text isn't cut off */
+            min-height: 52px;
+            /* Keep selected value on a single line */
+            line-height: 1.4;
+            /* FIX: Ensure the dropdown itself is wide enough */
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .rider-selector-item select option {
+            white-space: nowrap;
+        }
+
+        .rider-selector-item .addon-item,
+        .rider-selector-item .addon-item label {
+            width: 100%;
+            min-height: 52px;
+        }
+
+        .rider-selector .addon-name {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            line-height: 1.25;
+        }
+
+        .rider-selector .info-btn {
+            margin-left: 0;
+            flex-shrink: 0;
+        }
+
+        .rider-selector-item select:focus {
+            outline: none;
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(26, 58, 110, 0.1);
+        }
+
+        .rider-selector-item select.has-selection {
+            border-color: var(--success);
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+
+        .rider-or {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 8px;
+            min-width: 74px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .rider-selector .addon-item {
+            margin-bottom: 0;
+        }
+
+        .rider-selector .helper-text {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--light-gray);
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+
+        /* Scheduling Options */
+        .scheduling-options {
+            margin-bottom: 24px;
+        }
+        
+        .scheduling-option {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        
+        .scheduling-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .scheduling-option > label {
+            display: block;
+            padding: 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .scheduling-option > label:hover {
+            border-color: var(--navy);
+        }
+        
+        .scheduling-option input[type="radio"]:checked + label {
+            border-color: var(--texas-red);
+            background: rgba(191, 10, 48, 0.03);
+        }
+        
+        .scheduling-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .scheduling-title {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .scheduling-title svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--navy);
+            flex-shrink: 0;
+        }
+        
+        .scheduling-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        
+        .scheduling-badge.included {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+        
+        .scheduling-badge.rush {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+        
+        .scheduling-desc {
+            font-size: 14px;
+            color: var(--medium-gray);
+            margin-bottom: 16px;
+        }
+        
+        .scheduling-date-picker {
+            display: none;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .scheduling-option input[type="radio"]:checked + label .scheduling-date-picker {
+            display: block;
+        }
+
+        .scheduling-option.disabled > label {
+            opacity: 0.65;
+            cursor: not-allowed;
+            border-color: var(--light-gray);
+            background: #f4f5f7;
+        }
+
+        .scheduling-option.disabled > label:hover {
+            border-color: var(--light-gray);
+        }
+
+        .next-day-cutoff-note {
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--medium-gray);
+        }
+
+        .next-day-cutoff-note.unavailable {
+            color: var(--texas-red);
+            font-weight: 600;
+        }
+        
+        .scheduling-date-picker input[type="date"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            /* MOBILE FIX: 16px prevents iOS zoom */
+            font-size: 16px;
+            min-height: 44px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        
+        .scheduling-date-picker input[type="date"]:focus {
+            outline: none;
+            border-color: var(--navy);
+        }
+        
+        .date-confirmation {
+            margin-top: 12px;
+            padding: 12px 16px;
+            background: var(--off-white);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+        
+        .date-confirmation strong {
+            color: var(--texas-red);
+        }
+        
+        .next-day-auto {
+            padding: 12px 16px;
+            background: var(--off-white);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+        
+        /* Price Summary */
+        .price-summary {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+        }
+        
+        .price-summary h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        
+        .price-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--dark-gray);
+        }
+        
+        .price-line.total {
+            border-top: 2px solid var(--light-gray);
+            margin-top: 8px;
+            padding-top: 12px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .price-line.total .price-value {
+            color: var(--texas-red);
+            font-family: var(--font-display);
+            font-size: 24px;
+        }
+        
+        .price-line.rush {
+            color: var(--warning);
+        }
+        
+        /* Review Summary */
+        .review-section {
+            margin-bottom: 24px;
+        }
+        
+        .review-section h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--medium-gray);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .review-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 15px;
+            gap: 12px;
+        }
+        
+        .review-item .review-label {
+            color: var(--medium-gray);
+            flex-shrink: 0;
+        }
+        
+        .review-item .review-value {
+            color: var(--dark-gray);
+            font-weight: 500;
+            text-align: right;
+            /* MOBILE FIX: Allow long text to wrap */
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        /* Buttons */
+        .form-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 16px 24px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            /* MOBILE FIX: Minimum touch target height */
+            min-height: 48px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        
+        .btn-back {
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            flex: 0 0 auto;
+            padding: 16px 20px;
+        }
+        
+        .btn-back:hover {
+            background: var(--medium-gray);
+            color: var(--white);
+        }
+        
+        /* MOBILE FIX: Active state for touch feedback */
+        .btn-back:active {
+            background: var(--medium-gray);
+            color: var(--white);
+        }
+        
+        .btn-next {
+            background: var(--texas-red);
+            color: var(--white);
+        }
+        
+        .btn-next:hover,
+        .btn-next:active {
+            background: var(--texas-red-dark);
+        }
+        
+        .btn-submit {
+            background: var(--success);
+            color: var(--white);
+        }
+        
+        .btn-submit:hover,
+        .btn-submit:active {
+            background: #059669;
+        }
+        
+        .btn svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .submission-error {
+            margin-top: 16px;
+            color: var(--texas-red);
+            font-size: 14px;
+            line-height: 1.5;
+            display: none;
+        }
+
+        .submission-error.active {
+            display: block;
+        }
+        
+        /* Success State */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .form-success.active {
+            display: block;
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: white;
+        }
+        
+        .form-success h2 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        
+        .form-success p {
+            color: var(--medium-gray);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .form-success .confirmation-number {
+            font-family: var(--font-display);
+            font-size: 24px;
+            color: var(--texas-red);
+            margin: 24px 0;
+            padding: 16px;
+            background: var(--off-white);
+            border-radius: 8px;
+            /* MOBILE FIX: Prevent overflow on small screens */
+            word-break: break-all;
+        }
+        
+        /* Loading State */
+        .btn.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .btn.loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top-color: currentColor;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 8px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* SMS Consent Section */
+        .sms-consent-section {
+            margin-top: 24px;
+            padding: 20px;
+            background: var(--off-white);
+            border-radius: 12px;
+            border: 1px solid var(--light-gray);
+        }
+
+        .sms-consent-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .consent-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .consent-checkbox input[type="checkbox"] {
+            margin-top: 4px;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            flex-shrink: 0;
+            /* MOBILE FIX: Ensure checkbox is tappable */
+            min-width: 22px;
+        }
+
+        .consent-checkbox label {
+            font-size: 13px;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            cursor: pointer;
+        }
+
+        .sms-consent-footer {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--medium-gray);
+        }
+
+        .sms-consent-footer a {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        /* ========== TABLET BREAKPOINT ========== */
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .nav-logo-text { display: none; }
+        }
+
+        /* ========== MOBILE BREAKPOINT ========== */
+        @media (max-width: 768px) {
+            .txposts-form-wrapper {
+                padding-top: calc(var(--nav-height-mobile) + 16px);
+                padding-right: 12px;
+                padding-bottom: 20px;
+                padding-left: 12px;
+                padding-right: calc(12px + env(safe-area-inset-right));
+                padding-bottom: calc(20px + env(safe-area-inset-bottom));
+                padding-left: calc(12px + env(safe-area-inset-left));
+            }
+
+            .nav-container {
+                height: 64px;
+                padding: 0 16px;
+                gap: 8px;
+            }
+
+            .nav-logo img { height: 36px; }
+
+            /* MOBILE FIX: Hide desktop nav, show hamburger */
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                padding: 16px;
+                gap: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 14px 16px;
+                font-size: 16px;
+                min-height: 44px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-cta {
+                display: block;
+                text-align: center;
+                margin-top: 8px;
+                padding: 14px 18px;
+                font-size: 16px;
+            }
+
+            .form-card {
+                padding: 28px 20px;
+                border-radius: 18px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .rider-selector-row {
+                grid-template-columns: 1fr;
+            }
+
+            .rider-or {
+                min-width: 0;
+                padding: 6px 0;
+            }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { justify-content: center; text-align: center; }
+        }
+
+        /* ========== SMALL PHONE BREAKPOINT ========== */
+        @media (max-width: 430px) {
+            .form-wrapper {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .form-card {
+                padding: 24px 16px;
+                border-radius: 16px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .service-options,
+            .post-options,
+            .addons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* MOBILE FIX: Step labels readable at 11px min (was 9px) */
+            .progress-step .step-label {
+                font-size: 11px;
+            }
+
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+
+            .step-title {
+                font-size: 24px;
+            }
+
+            .step-subtitle {
+                font-size: 14px;
+            }
+
+            /* Fix date picker overflow */
+            .scheduling-date-picker {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+            }
+
+            .scheduling-date-picker input[type="date"] {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .scheduling-option > label {
+                padding: 16px;
+            }
+
+            .scheduling-title {
+                font-size: 15px;
+            }
+
+            /* Buttons full width on small screens */
+            .form-buttons {
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .btn {
+                padding: 14px 16px;
+                font-size: 15px;
+                min-height: 48px;
+            }
+
+            .btn-back {
+                flex: 0 0 auto;
+                min-width: 48px;
+            }
+
+            /* Review items stack better on mobile */
+            .review-item {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .review-item .review-value {
+                text-align: left;
+            }
+
+            .form-success h2 {
+                font-size: 26px;
+            }
+
+            .form-success .confirmation-number {
+                font-size: 20px;
+                padding: 14px 12px;
+            }
+
+            .price-line.total .price-value {
+                font-size: 22px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+
+<div class="txposts-form-wrapper">
+<nav class="nav" id="nav">
+    <div class="nav-container">
+        <a href="/" class="nav-logo" aria-label="TX POSTS Home">
+            <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png" alt="TX POSTS">
+            <span class="nav-logo-text">TX POSTS</span>
+        </a>
+        <!-- MOBILE FIX: Hamburger menu button for mobile -->
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/services">Services</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/#service-area">Service Area</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/order" class="nav-cta">Request Install</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="form-wrapper">
+    <!-- Header -->
+    <div class="form-header">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png" alt="TX POSTS">
+        <h1>REQUEST SERVICE</h1>
+        <p>Professional sign post installation for DFW realtors</p>
+    </div>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-steps">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number"><span>1</span></div>
+                <div class="step-label">Contact</div>
+            </div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number"><span>2</span></div>
+                <div class="step-label">Service</div>
+            </div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number"><span>3</span></div>
+                <div class="step-label">Details</div>
+            </div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number"><span>4</span></div>
+                <div class="step-label">Schedule</div>
+            </div>
+            <div class="progress-step" data-step="5">
+                <div class="step-number"><span>5</span></div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Form Card -->
+    <div class="form-card">
+        <form id="requestForm" novalidate>
+            
+            <!-- Step 1: Contact Info -->
+            <div class="form-step active" data-step="1">
+                <h2 class="step-title">YOUR INFORMATION</h2>
+                <p class="step-subtitle">Let's start with your contact details so we can confirm your request.</p>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" name="first_name" required placeholder="Jane" autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name <span class="required">*</span></label>
+                        <input type="text" name="last_name" required placeholder="Smith" autocomplete="family-name">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Phone Number <span class="required">*</span></label>
+                    <input type="tel" name="phone" required placeholder="(817) 555-1234" autocomplete="tel">
+                    <p class="helper-text">We'll text you updates about your installation</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" name="email" required placeholder="jane@realestate.com" autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label>Brokerage</label>
+                    <input type="text" name="brokerage" placeholder="Keller Williams, RE/MAX, etc." autocomplete="organization">
+                </div>
+
+                <!-- SMS Consent Section (A2P/TCPA Compliance) -->
+                <div class="sms-consent-section">
+                    <div class="sms-consent-title">TX POSTS SMS Communications</div>
+                    <div class="consent-checkbox">
+                        <input type="checkbox" name="sms_consent" id="sms_consent" value="yes">
+                        <label for="sms_consent">
+                            I agree to receive SMS text messages from <strong>TX POSTS</strong> regarding my service requests, appointment confirmations, and installation updates. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe at any time. Reply HELP for assistance.
+                        </label>
+                    </div>
+                    <div class="sms-consent-footer">
+                        By checking this box, you consent to receive automated text messages. This consent is not a condition of purchase. View our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-and-conditions">Terms of Service</a>.
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-next">
+                        Continue
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Service Type -->
+            <div class="form-step" data-step="2">
+                <h2 class="step-title">WHAT DO YOU NEED?</h2>
+                <p class="step-subtitle">Select the service you're requesting today.</p>
+
+                <div class="service-options">
+                    <div class="service-option">
+                        <input type="radio" name="service_type" id="service_install" value="install" required>
+                        <label for="service_install">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2v20M2 12h20"/>
+                                </svg>
+                            </div>
+                            <div class="service-name">Install</div>
+                            <div class="service-desc">New sign post installation</div>
+                        </label>
+                    </div>
+                    <div class="service-option">
+                        <input type="radio" name="service_type" id="service_remove" value="remove">
+                        <label for="service_remove">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 6L6 18M6 6l12 12"/>
+                                </svg>
+                            </div>
+                            <div class="service-name">Remove</div>
+                            <div class="service-desc">Pick up existing sign</div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="service-options" style="grid-template-columns: 1fr;">
+                    <div class="service-option">
+                        <input type="radio" name="service_type" id="service_other" value="other">
+                        <label for="service_other">
+                            <div class="service-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 16v-4M12 8h.01"/>
+                                </svg>
+                            </div>
+                            <div class="service-name">Other</div>
+                            <div class="service-desc">Relocation, maintenance, rider swap, etc.</div>
+                        </label>
+                    </div>
+                </div>
+
+                <p id="step2-error" style="display: none; color: var(--texas-red); font-weight: 600; font-size: 14px; margin-top: 16px;" role="alert"></p>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button type="button" class="btn btn-next">
+                        Continue
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 3: Property Details -->
+            <div class="form-step" data-step="3">
+                <h2 class="step-title">PROPERTY DETAILS</h2>
+                <p class="step-subtitle">Tell us about the property and what you need installed.</p>
+                
+                <!-- Install-specific fields -->
+                <div id="install-fields">
+                    <div class="form-group">
+                        <label>Property Address <span class="required">*</span></label>
+                        <input type="text" name="install_address" placeholder="123 Main Street" autocomplete="street-address">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City <span class="required">*</span></label>
+                            <input type="text" name="city" placeholder="Fort Worth" autocomplete="address-level2">
+                        </div>
+                        <div class="form-group">
+                            <label>ZIP Code <span class="required">*</span></label>
+                            <input type="text" name="zip" placeholder="76102" inputmode="numeric" pattern="[0-9]*" autocomplete="postal-code">
+                        </div>
+                    </div>
+                    
+                    <label style="display: block; font-weight: 600; font-size: 14px; color: var(--dark-gray); margin-bottom: 12px;">Post Type <span class="required" style="color: var(--texas-red);">*</span></label>
+                    
+                    <!-- $65 Options -->
+                    <div class="price-tier-label">$65 Options</div>
+                    <div class="post-options">
+                        <div class="post-option">
+                            <input type="radio" name="post_type" id="post_tx_wood" value="TX Posts Wood">
+                            <label for="post_tx_wood">
+                                <div class="post-name">TX POSTS Wood Post</div>
+                                <div class="post-price">$65</div>
+                                <div class="post-desc">We provide the post. Free maintenance included.</div>
+                            </label>
+                        </div>
+                        <div class="post-option">
+                            <input type="radio" name="post_type" id="post_client_pvc" value="Client Aluminum/PVC">
+                            <label for="post_client_pvc">
+                                <div class="post-name">Your PVC/Aluminum Post</div>
+                                <div class="post-price">$65</div>
+                                <div class="post-desc">You supply the post. $45 maintenance if needed.</div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- $55 Options -->
+                    <div class="price-tier-label">$55 Options</div>
+                    <div class="post-options">
+                        <div class="post-option">
+                            <input type="radio" name="post_type" id="post_client_metal" value="Client Metal Frame">
+                            <label for="post_client_metal">
+                                <div class="post-name">Your Metal Frame</div>
+                                <div class="post-price">$55</div>
+                                <div class="post-desc">You supply the frame. We can store it for you. $35 maintenance if needed.</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- $60 Options -->
+                    <div class="price-tier-label">$60 Options</div>
+                    <div class="post-options">
+                        <div class="post-option">
+                            <input type="radio" name="post_type" id="post_custom" value="Client Custom/Large">
+                            <label for="post_custom">
+                                <div class="post-name">Your Custom Posts</div>
+                                <div class="post-price">$60</div>
+                                <div class="post-desc">Non-standard metal frame or specialty posts (not PVC/aluminum colonial). $40 maintenance if needed.</div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <label style="display: block; font-weight: 600; font-size: 14px; color: var(--dark-gray); margin-bottom: 12px;">Add-Ons (Optional)</label>
+                    <div class="addons-grid">
+                        <div class="addon-item">
+                            <input type="checkbox" name="addon_solar" id="addon_solar" value="15">
+                            <label for="addon_solar">
+                                <div class="addon-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Solar Light</div>
+                                    <div class="addon-price">+$15</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="addon-item">
+                            <input type="checkbox" name="addon_brochure" id="addon_brochure" value="15">
+                            <label for="addon_brochure">
+                                <div class="addon-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Brochure Box</div>
+                                    <div class="addon-price">+$15</div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="addon-item">
+                            <input type="checkbox" name="addon_lockbox" id="addon_lockbox" value="10">
+                            <label for="addon_lockbox">
+                                <div class="addon-check">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                </div>
+                                <div class="addon-info">
+                                    <div class="addon-name">Lockbox Install</div>
+                                    <div class="addon-price">+$10</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Rider Options -->
+                    <div class="rider-selector">
+                        <label class="rider-selector-label">Riders (Optional)</label>
+                        <div class="rider-selector-row">
+                            <div class="rider-selector-item">
+                                <select name="single_riders" id="single_riders" onchange="updateRiderSelection()">
+                                    <option value="0">No single riders</option>
+                                    <option value="1">1 Rider (+$10)</option>
+                                    <option value="2">2 Riders (+$20)</option>
+                                </select>
+                            </div>
+                            <div class="rider-or">-- OR --</div>
+                            <div class="rider-selector-item">
+                                <div class="addon-item">
+                                    <input type="checkbox" name="addon_riders" id="addon_riders" value="25" onchange="updateRiderSelection()">
+                                    <label for="addon_riders">
+                                        <div class="addon-check">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                                        </div>
+                                        <div class="addon-info">
+                                            <div class="addon-name">
+                                                Rider 3-Pack
+                                                <button type="button" class="info-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleTooltip('rider-tooltip')">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                                                </button>
+                                            </div>
+                                            <div class="addon-price">+$25</div>
+                                        </div>
+                                    </label>
+                                    <div class="tooltip" id="rider-tooltip">
+                                        <div class="tooltip-content">
+                                            <strong>How the 3-Pack Works:</strong>
+                                            <p>Your first rider is installed with your sign post. The remaining 2 swaps are available for later — just request a swap when your listing status changes (Under Contract, Sold, etc.).</p>
+                                            <p style="margin-top: 8px; font-size: 12px; color: rgba(255,255,255,0.7);">Single riders don't include swaps. Extra swaps beyond the 3-pack are $10 each.</p>
+                                            <button type="button" class="tooltip-close" onclick="toggleTooltip('rider-tooltip')">Got it</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="helper-text">Single riders: $10 each (no swaps included). 3-Pack: $25 (includes 2 free swaps). Please specify which riders you want in the Special Instructions below.</p>
+                    </div>
+                </div>
+                
+                <!-- Remove-specific fields -->
+                <div id="remove-fields" style="display: none;">
+                    <div class="form-group">
+                        <label>Property Address (where sign is located) <span class="required">*</span></label>
+                        <input type="text" name="install_address" disabled placeholder="123 Main Street">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City <span class="required">*</span></label>
+                            <input type="text" name="city" disabled placeholder="Fort Worth">
+                        </div>
+                        <div class="form-group">
+                            <label>ZIP Code <span class="required">*</span></label>
+                            <input type="text" name="zip" disabled placeholder="76102" inputmode="numeric" pattern="[0-9]*">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>What should we do with your sign?</label>
+                        <select name="sign_disposition" id="sign_disposition">
+                            <option value="storage">Keep in TX POSTS storage (free)</option>
+                            <option value="return_brokerage">Return to my brokerage</option>
+                            <option value="return_address">Return to a specific address</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="return-address-group" style="display: none;">
+                        <label>Return Address</label>
+                        <input type="text" name="return_address" placeholder="Where should we deliver your sign?">
+                    </div>
+                </div>
+                
+                <!-- Other-specific fields -->
+                <div id="other-fields" style="display: none;">
+                    <div class="form-group">
+                        <label>What do you need? <span class="required">*</span></label>
+                        <select name="other_service" id="other_service_select">
+                            <option value="">Select a service...</option>
+                            <option value="maintenance_free">Repair / Straighten — TX Posts Wood Post (Free)</option>
+                            <option value="repair_pvc_aluminum">Repair / Straighten — Your PVC/Aluminum Post ($45)</option>
+                            <option value="repair_metal_frame">Repair / Straighten — Your Metal Frame ($35)</option>
+                            <option value="repair_custom">Repair / Straighten — Your Custom Post ($40)</option>
+                            <option value="rider_swap">Swap riders</option>
+                            <option value="lockbox_only">Lockbox install only (no sign)</option>
+                            <option value="other">Something else</option>
+                        </select>
+                        <p class="helper-text" id="repair-note" style="display: none;">Repair requests are typically completed within 24 hours of submission.</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Property Address</label>
+                        <input type="text" name="other_address" placeholder="123 Main Street">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Please describe what you need</label>
+                        <textarea name="other_description" placeholder="Tell us what you need and we'll take care of it..."></textarea>
+                    </div>
+                </div>
+                
+                <!-- Common fields -->
+                <div class="form-group">
+                    <label>Gate Code / Access Instructions</label>
+                    <input type="text" name="gate_code" placeholder="Gate code, lockbox location, etc.">
+                </div>
+                
+                <div class="form-group">
+                    <label>Special Instructions</label>
+                    <textarea name="notes" placeholder="Placement preferences, panel pickup location, anything else we should know..."></textarea>
+                </div>
+                
+                <p id="step3-error" style="display: none; color: var(--texas-red); font-weight: 600; font-size: 14px; margin-top: 16px;" role="alert"></p>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button type="button" class="btn btn-next">
+                        Continue
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 4: Scheduling -->
+            <div class="form-step" data-step="4">
+                <h2 class="step-title">WHEN DO YOU NEED THIS?</h2>
+                <p class="step-subtitle">Choose your preferred scheduling option.</p>
+                
+                <div class="scheduling-options">
+                    <div class="scheduling-option">
+                        <input type="radio" name="scheduling_type" id="schedule_standard" value="standard" checked>
+                        <label for="schedule_standard">
+                            <div class="scheduling-header">
+                                <div class="scheduling-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    Standard Scheduling
+                                </div>
+                                <span class="scheduling-badge included">INCLUDED</span>
+                            </div>
+                            <p class="scheduling-desc" id="standard-schedule-desc">Select a start date and we'll install within 3 business days.</p>
+                            <div class="scheduling-date-picker">
+                                <label style="font-size: 14px; color: var(--dark-gray); margin-bottom: 8px; display: block;">Select your preferred start date:</label>
+                                <input type="date" name="standard_date" id="standard_date">
+                                <div class="date-confirmation" id="standard-confirmation" style="display: none;">
+                                    <span id="standard-action-text">Your sign will be installed</span> between <strong id="window-start"></strong> and <strong id="window-end"></strong>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="scheduling-option">
+                        <input type="radio" name="scheduling_type" id="schedule_specific" value="specific_day">
+                        <label for="schedule_specific">
+                            <div class="scheduling-header">
+                                <div class="scheduling-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    Specific Day
+                                </div>
+                                <span class="scheduling-badge rush">+$50</span>
+                            </div>
+                            <p class="scheduling-desc" id="specific-schedule-desc">Need it on an exact date? We'll prioritize your installation.</p>
+                            <div class="scheduling-date-picker">
+                                <label style="font-size: 14px; color: var(--dark-gray); margin-bottom: 8px; display: block;">Select your date:</label>
+                                <input type="date" name="specific_date" id="specific_date">
+                                <div class="date-confirmation" id="specific-confirmation" style="display: none;">
+                                    <span id="specific-action-text">Your sign will be installed</span> on <strong id="specific-day"></strong>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div class="scheduling-option">
+                        <input type="radio" name="scheduling_type" id="schedule_nextday" value="next_day">
+                        <label for="schedule_nextday">
+                            <div class="scheduling-header">
+                                <div class="scheduling-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                    Next Business Day
+                                </div>
+                                <span class="scheduling-badge rush">+$50</span>
+                            </div>
+                            <p class="scheduling-desc" id="nextday-schedule-desc">Need it ASAP? We'll install on the next available business day.</p>
+                            <div class="scheduling-date-picker">
+                                <div class="next-day-auto">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px; display: inline; vertical-align: middle; margin-right: 8px;"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span id="nextday-action-text">Your sign will be installed</span> on <strong id="next-day-date"></strong>
+                                </div>
+                                <p class="next-day-cutoff-note" id="next-day-cutoff-note">Orders submitted from 5:00 AM to 5:00 PM CT install the next business day. Outside that window, install is on the following business day.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Price Summary -->
+                <div class="price-summary" id="price-summary">
+                    <h4>ESTIMATED TOTAL</h4>
+                    <div class="price-line" id="price-base">
+                        <span>Base Installation</span>
+                        <span class="price-value">$65</span>
+                    </div>
+                    <div class="price-line" id="price-addons" style="display: none;">
+                        <span>Add-Ons</span>
+                        <span class="price-value">$0</span>
+                    </div>
+                    <div class="price-line" id="price-riders" style="display: none;">
+                        <span>Riders</span>
+                        <span class="price-value">$0</span>
+                    </div>
+                    <div class="price-line rush" id="price-rush" style="display: none;">
+                        <span>Rush Fee</span>
+                        <span class="price-value">+$50</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>Total</span>
+                        <span class="price-value" id="price-total">$65</span>
+                    </div>
+                </div>
+                
+                <p id="step4-error" style="display: none; color: var(--texas-red); font-weight: 600; font-size: 14px; margin-top: 16px;" role="alert"></p>
+
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button type="button" class="btn btn-next">
+                        Review Order
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 5: Review & Submit -->
+            <div class="form-step" data-step="5">
+                <h2 class="step-title">REVIEW YOUR REQUEST</h2>
+                <p class="step-subtitle">Please confirm everything looks correct before submitting.</p>
+                
+                <div class="review-section">
+                    <h4>Contact Information</h4>
+                    <div class="review-item">
+                        <span class="review-label">Name</span>
+                        <span class="review-value" id="review-name">-</span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Phone</span>
+                        <span class="review-value" id="review-phone">-</span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Email</span>
+                        <span class="review-value" id="review-email">-</span>
+                    </div>
+                </div>
+                
+                <div class="review-section">
+                    <h4>Service Details</h4>
+                    <div class="review-item">
+                        <span class="review-label">Service Type</span>
+                        <span class="review-value" id="review-service">-</span>
+                    </div>
+                    <div class="review-item" id="review-address-row">
+                        <span class="review-label">Property Address</span>
+                        <span class="review-value" id="review-address">-</span>
+                    </div>
+                    <div class="review-item" id="review-post-row">
+                        <span class="review-label">Post Type</span>
+                        <span class="review-value" id="review-post">-</span>
+                    </div>
+                    <div class="review-item" id="review-addons-row" style="display: none;">
+                        <span class="review-label">Add-Ons</span>
+                        <span class="review-value" id="review-addons">-</span>
+                    </div>
+                    <div class="review-item" id="review-riders-row" style="display: none;">
+                        <span class="review-label">Riders</span>
+                        <span class="review-value" id="review-riders">-</span>
+                    </div>
+                    <div class="review-item" id="review-disposition-row" style="display: none;">
+                        <span class="review-label">Sign Disposition</span>
+                        <span class="review-value" id="review-disposition">-</span>
+                    </div>
+                </div>
+
+                <div class="review-section" id="review-scheduling-section">
+                    <h4>Scheduling</h4>
+                    <div class="review-item">
+                        <span class="review-label">Type</span>
+                        <span class="review-value" id="review-schedule-type">-</span>
+                    </div>
+                    <div class="review-item">
+                        <span class="review-label">Date(s)</span>
+                        <span class="review-value" id="review-schedule-date">-</span>
+                    </div>
+                </div>
+                
+                <!-- Final Price -->
+                <div class="price-summary">
+                    <h4>ORDER TOTAL</h4>
+                    <div class="price-line" id="final-base">
+                        <span>Base Service</span>
+                        <span class="price-value">$65</span>
+                    </div>
+                    <div class="price-line" id="final-addons" style="display: none;">
+                        <span>Add-Ons</span>
+                        <span class="price-value">$0</span>
+                    </div>
+                    <div class="price-line" id="final-riders" style="display: none;">
+                        <span>Riders</span>
+                        <span class="price-value">$0</span>
+                    </div>
+                    <div class="price-line rush" id="final-rush" style="display: none;">
+                        <span>Rush Fee</span>
+                        <span class="price-value">+$50</span>
+                    </div>
+                    <div class="price-line total">
+                        <span>Total</span>
+                        <span class="price-value" id="final-total">$65</span>
+                    </div>
+                    <p style="font-size: 13px; color: var(--medium-gray); margin-top: 12px;">
+                        This will be added to your monthly invoice. No payment required today.
+                    </p>
+                </div>
+
+                <p id="submission-error" class="submission-error" role="alert" aria-live="polite"></p>
+                
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button type="submit" class="btn btn-submit" id="submitBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        Submit Request
+                    </button>
+                </div>
+            </div>
+            
+        </form>
+        
+        <!-- Success State -->
+        <div class="form-success" id="form-success">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h2>REQUEST SUBMITTED!</h2>
+            <p>Thank you for choosing TX POSTS.</p>
+            <p id="confirm-service-text">We'll confirm your installation within 24 hours.</p>
+            <div class="confirmation-number">
+                Confirmation: <span id="confirmation-code">TXP-000000</span>
+            </div>
+            <p style="font-size: 14px; color: var(--medium-gray);">
+                A confirmation text has been sent to your phone.<br>
+                Questions? Call us at <a href="tel:8177608288" style="color: var(--texas-red); font-weight: 700; text-decoration: none;">(817) 760-8288</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="nav-logo" aria-label="TX POSTS Home">
+                    <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png" alt="TX POSTS" style="height: 50px;">
+                </a>
+                <p>Professional real estate sign post installation serving Tarrant County and the greater Dallas-Fort Worth area for over 18 years.</p>
+            </div>
+            <div>
+                <h4>QUICK LINKS</h4>
+                <ul class="footer-links">
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/#service-area">Service Area</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/order">Order / Schedule</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>SERVICES</h4>
+                <ul class="footer-links">
+                    <li><a href="/services#post-installation">Post Installation</a></li>
+                    <li><a href="/services#post-removal">Post Removal</a></li>
+                    <li><a href="/services#panel-riders">Panel & Rider Hanging</a></li>
+                    <li><a href="/services#rush-service">Rush Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>CONTACT</h4>
+                <p>Phone: <a href="tel:8177608288">(817) 760-8288</a></p>
+                <p>Email: support@txposts.com</p>
+                <p>Tarrant County, Texas</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TX POSTS. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms & Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</div><!-- end .txposts-form-wrapper -->
+
+<script>
+    // =============================================
+    // CONFIGURATION
+    // =============================================
+    
+    const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YMTBFGIe6LTatpFGulrT/webhook-trigger/4af65216-14ce-4e12-9d11-bb69335085a9';
+    // Optional fallback IDs if your funnel URL does not provide pipeline/stage params.
+    const DEFAULT_OPPORTUNITY_PIPELINE_ID = '';
+    const DEFAULT_OPPORTUNITY_STAGE_ID = '';
+    const FORM_SOURCE = 'TX POSTS Funnel Order Form';
+    const SERVICE_TIMEZONE = 'America/Chicago';
+    const NEXT_DAY_START_HOUR = 5; // 5:00 AM CT
+    const NEXT_DAY_CUTOFF_HOUR = 17; // 5:00 PM CT
+    
+    // Federal Bank Holidays (2025-2026)
+    const BANK_HOLIDAYS = [
+        '2025-01-01','2025-01-20','2025-02-17','2025-05-26','2025-06-19',
+        '2025-07-04','2025-09-01','2025-10-13','2025-11-11','2025-11-27','2025-12-25',
+        '2026-01-01','2026-01-19','2026-02-16','2026-05-25','2026-06-19',
+        '2026-07-03','2026-09-07','2026-10-12','2026-11-11','2026-11-26','2026-12-25',
+        '2027-01-01','2027-01-18','2027-02-15','2027-05-31','2027-06-18',
+        '2027-07-05','2027-09-06','2027-10-11','2027-11-11','2027-11-25','2027-12-24',
+    ];
+    
+    // =============================================
+    // STATE
+    // =============================================
+    
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    // =============================================
+    // HELPERS
+    // =============================================
+
+    function ensureViewportMetaTag() {
+        if (document.querySelector('meta[name="viewport"]')) return;
+
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0';
+        document.head.appendChild(meta);
+    }
+
+    function cleanValue(value) {
+        if (value === null || value === undefined) return '';
+        return String(value).trim();
+    }
+
+    function toInt(value) {
+        var parsed = parseInt(value, 10);
+        return isNaN(parsed) ? 0 : parsed;
+    }
+
+    function normalizePhone(value) {
+        return cleanValue(value).replace(/\D/g, '');
+    }
+
+    function getUrlContext() {
+        var params = new URLSearchParams(window.location.search);
+        return {
+            contact_id: cleanValue(params.get('contact_id') || params.get('cid')),
+            opportunity_id: cleanValue(params.get('opportunity_id') || params.get('oid')),
+            opportunity_mode: cleanValue(params.get('opportunity_mode')).toLowerCase(),
+            pipeline_id: cleanValue(params.get('pipeline_id')) || DEFAULT_OPPORTUNITY_PIPELINE_ID,
+            pipeline_stage_id: cleanValue(params.get('pipeline_stage_id') || params.get('stage_id')) || DEFAULT_OPPORTUNITY_STAGE_ID,
+            utm_source: cleanValue(params.get('utm_source')),
+            utm_medium: cleanValue(params.get('utm_medium')),
+            utm_campaign: cleanValue(params.get('utm_campaign')),
+            utm_term: cleanValue(params.get('utm_term')),
+            utm_content: cleanValue(params.get('utm_content')),
+            gclid: cleanValue(params.get('gclid')),
+            fbclid: cleanValue(params.get('fbclid'))
+        };
+    }
+    
+    // =============================================
+    // MOBILE NAV TOGGLE
+    // =============================================
+    
+    var navToggle = document.getElementById('navToggle');
+    var navLinks = document.getElementById('navLinks');
+
+    function setMobileNavOpen(isOpen) {
+        if (!navToggle || !navLinks) return;
+        navLinks.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+            var isOpen = navLinks.classList.contains('active');
+            setMobileNavOpen(!isOpen);
+        });
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                setMobileNavOpen(false);
+            });
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.nav-container')) {
+                setMobileNavOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                setMobileNavOpen(false);
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                setMobileNavOpen(false);
+            }
+        });
+    }
+
+    // =============================================
+    // DATE UTILITIES
+    // =============================================
+    
+    function isSunday(date) {
+        return date.getDay() === 0;
+    }
+
+    function isWeekend(date) {
+        return date.getDay() === 0; // Sunday only - TX POSTS works Saturdays
+    }
+
+    function toDateKey(date) {
+        var year = date.getFullYear();
+        var month = String(date.getMonth() + 1).padStart(2, '0');
+        var day = String(date.getDate()).padStart(2, '0');
+        return year + '-' + month + '-' + day;
+    }
+
+    function getServiceNowParts() {
+        var parts = new Intl.DateTimeFormat('en-US', {
+            timeZone: SERVICE_TIMEZONE,
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+        }).formatToParts(new Date());
+
+        var map = {};
+        parts.forEach(function(part) {
+            map[part.type] = part.value;
+        });
+
+        var hourValue = parseInt(map.hour, 10);
+        if (hourValue === 24) hourValue = 0;
+
+        return {
+            year: parseInt(map.year, 10),
+            month: parseInt(map.month, 10),
+            day: parseInt(map.day, 10),
+            hour: hourValue,
+            minute: parseInt(map.minute, 10),
+            second: parseInt(map.second, 10)
+        };
+    }
+
+    function getTodayInServiceTimeZone() {
+        var now = getServiceNowParts();
+        return new Date(now.year, now.month - 1, now.day, 12, 0, 0, 0);
+    }
+
+    function getNextDaySchedulingPlan() {
+        var now = getServiceNowParts();
+        var qualifiesForNextBusinessDay = now.hour >= NEXT_DAY_START_HOUR && now.hour < NEXT_DAY_CUTOFF_HOUR;
+        var businessDaysToAdd = qualifiesForNextBusinessDay ? 1 : 2;
+
+        return {
+            qualifiesForNextBusinessDay: qualifiesForNextBusinessDay,
+            businessDaysToAdd: businessDaysToAdd,
+            scheduledDate: addBusinessDays(getTodayInServiceTimeZone(), businessDaysToAdd)
+        };
+    }
+    
+    function isHoliday(date) {
+        const dateStr = toDateKey(date);
+        return BANK_HOLIDAYS.includes(dateStr);
+    }
+    
+    function isBusinessDay(date) {
+        return !isWeekend(date) && !isHoliday(date);
+    }
+    
+    function addBusinessDays(startDate, days) {
+        let result = new Date(startDate);
+        let added = 0;
+        while (added < days) {
+            result.setDate(result.getDate() + 1);
+            if (isBusinessDay(result)) added++;
+        }
+        return result;
+    }
+    
+    function getNextBusinessDay() {
+        let date = getTodayInServiceTimeZone();
+        date.setDate(date.getDate() + 1);
+        while (!isBusinessDay(date)) {
+            date.setDate(date.getDate() + 1);
+        }
+        return date;
+    }
+    
+    function getMinDate() {
+        var now = getServiceNowParts();
+        // Order placed Mon–Sat by 5:00 PM CT → Day 0 = today, Day 1 = next biz day (earliest selectable)
+        // Order placed Mon–Sat after 5:01 PM CT → Day 0 = next biz day, Day 1 = day after that (earliest selectable)
+        // The 3-day install window starts on the selected date (Day 1)
+        var beforeCutoff = now.hour >= NEXT_DAY_START_HOUR && now.hour < NEXT_DAY_CUTOFF_HOUR;
+        var leadDays = beforeCutoff ? 1 : 2;
+        return addBusinessDays(getTodayInServiceTimeZone(), leadDays);
+    }
+    
+    function formatDate(date) {
+        return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+    }
+    
+    function formatDateFull(date) {
+        return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    }
+    
+    // =============================================
+    // INLINE STEP ERRORS (replaces alert() for GHL iframe compatibility)
+    // =============================================
+
+    function showStepError(stepNum, message) {
+        var errorEl = document.getElementById('step' + stepNum + '-error');
+        if (!errorEl) return;
+        errorEl.textContent = message;
+        errorEl.style.display = 'block';
+        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function clearStepError(stepNum) {
+        var errorEl = document.getElementById('step' + stepNum + '-error');
+        if (errorEl) {
+            errorEl.textContent = '';
+            errorEl.style.display = 'none';
+        }
+    }
+
+    // =============================================
+    // STEP NAVIGATION
+    // =============================================
+
+    function updateProgress() {
+        document.querySelectorAll('.progress-step').forEach(function(step, index) {
+            var stepNum = index + 1;
+            step.classList.remove('active', 'completed');
+            if (stepNum < currentStep) {
+                step.classList.add('completed');
+            } else if (stepNum === currentStep) {
+                step.classList.add('active');
+            }
+        });
+    }
+    
+    function showStep(step) {
+        document.querySelectorAll('.form-step').forEach(function(s) {
+            s.classList.remove('active');
+        });
+
+        var targetStep = document.querySelector('.form-step[data-step="' + step + '"]');
+        if (targetStep) {
+            targetStep.classList.add('active');
+        }
+
+        currentStep = step;
+        updateProgress();
+
+        // MOBILE FIX: Improved scroll behavior for mobile
+        setTimeout(function() {
+            var formCard = document.querySelector('.form-card');
+            if (formCard) {
+                var navHeight = document.querySelector('.nav') ? document.querySelector('.nav').offsetHeight : 0;
+                var elementTop = formCard.getBoundingClientRect().top + window.pageYOffset - navHeight - 16;
+                window.scrollTo({ top: elementTop, behavior: 'smooth' });
+            }
+        }, 150);
+    }
+    
+    function validateStep(step) {
+        var isValid = true;
+        var currentStepEl = document.querySelector('.form-step[data-step="' + step + '"]');
+
+        // Clear previous errors
+        clearStepError(step);
+        currentStepEl.querySelectorAll('.form-group').forEach(function(g) { g.classList.remove('has-error'); });
+        currentStepEl.querySelectorAll('input, select, textarea').forEach(function(i) { i.classList.remove('error'); });
+        
+        if (step === 1) {
+            var required = ['first_name', 'last_name', 'phone', 'email'];
+            required.forEach(function(field) {
+                var input = currentStepEl.querySelector('[name="' + field + '"]');
+                if (input && !input.value.trim()) {
+                    input.classList.add('error');
+                    if (input.closest('.form-group')) {
+                        input.closest('.form-group').classList.add('has-error');
+                    }
+                    isValid = false;
+                }
+            });
+            
+            var email = currentStepEl.querySelector('[name="email"]');
+            if (email && email.value && !email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                email.classList.add('error');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                // MOBILE FIX: Scroll to first error field
+                var firstError = currentStepEl.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+            }
+        }
+        
+        if (step === 2) {
+            var serviceType = document.querySelector('input[name="service_type"]:checked');
+            if (!serviceType) {
+                isValid = false;
+                showStepError(2, 'Please select a service type.');
+            }
+        }
+
+        if (step === 3) {
+            var serviceType = document.querySelector('input[name="service_type"]:checked');
+            var serviceVal = serviceType ? serviceType.value : '';
+
+            if (serviceVal === 'install') {
+                ['install_address', 'city', 'zip'].forEach(function(field) {
+                    var input = currentStepEl.querySelector('[name="' + field + '"]');
+                    if (input && !input.value.trim()) {
+                        input.classList.add('error');
+                        if (input.closest('.form-group')) {
+                            input.closest('.form-group').classList.add('has-error');
+                        }
+                        isValid = false;
+                    }
+                });
+
+                var postType = document.querySelector('input[name="post_type"]:checked');
+                if (!postType) {
+                    isValid = false;
+                    showStepError(3, 'Please select a post type.');
+                }
+            } else if (serviceVal === 'remove') {
+                ['install_address', 'city', 'zip'].forEach(function(field) {
+                    var removeInput = currentStepEl.querySelector('#remove-fields [name="' + field + '"]');
+                    if (removeInput && !removeInput.value.trim()) {
+                        removeInput.classList.add('error');
+                        if (removeInput.closest('.form-group')) {
+                            removeInput.closest('.form-group').classList.add('has-error');
+                        }
+                        isValid = false;
+                    }
+                });
+            } else if (serviceVal === 'other') {
+                var otherService = currentStepEl.querySelector('[name="other_service"]');
+                if (otherService && !otherService.value) {
+                    otherService.classList.add('error');
+                    if (otherService.closest('.form-group')) {
+                        otherService.closest('.form-group').classList.add('has-error');
+                    }
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) {
+                var firstError = currentStepEl.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+            }
+        }
+        
+        if (step === 4) {
+            var scheduleType = document.querySelector('input[name="scheduling_type"]:checked');
+            var scheduleVal = scheduleType ? scheduleType.value : '';
+            var svcEl = document.querySelector('input[name="service_type"]:checked');
+            var svcVal = svcEl ? svcEl.value : '';
+            var svcWord = svcVal === 'remove' ? 'removal' : svcVal === 'other' ? 'service' : 'installation';
+
+            if (!scheduleVal) {
+                isValid = false;
+                showStepError(4, 'Please select a scheduling option.');
+            } else if (scheduleVal === 'standard') {
+                if (!document.getElementById('standard_date').value) {
+                    isValid = false;
+                    showStepError(4, 'Please select a start date for your ' + svcWord + ' window.');
+                }
+            } else if (scheduleVal === 'specific_day') {
+                if (!document.getElementById('specific_date').value) {
+                    isValid = false;
+                    showStepError(4, 'Please select your preferred ' + svcWord + ' date.');
+                }
+            }
+            // next_day: no user date input needed — auto-calculated
+        }
+
+        return isValid;
+    }
+    
+    function nextStep() {
+        if (!validateStep(currentStep)) return;
+
+        if (currentStep < totalSteps) {
+            var nextStepNum = currentStep + 1;
+
+            if (nextStepNum === 5) {
+                populateReview();
+            }
+            showStep(nextStepNum);
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            var prevStepNum = currentStep - 1;
+
+            showStep(prevStepNum);
+        }
+    }
+    
+    // =============================================
+    // DYNAMIC FORM BEHAVIOR
+    // =============================================
+    
+    function updateServiceLanguage() {
+        var serviceType = document.querySelector('input[name="service_type"]:checked');
+        var serviceVal = serviceType ? serviceType.value : 'install';
+        var isRemoval = serviceVal === 'remove';
+        var isOther   = serviceVal === 'other';
+
+        var actionText = isRemoval ? 'Your sign will be removed'
+                       : isOther   ? 'Your service will be completed'
+                       :             'Your sign will be installed';
+        ['standard-action-text', 'specific-action-text', 'nextday-action-text'].forEach(function(id) {
+            var el = document.getElementById(id);
+            if (el) el.textContent = actionText;
+        });
+
+        var standardDesc = document.getElementById('standard-schedule-desc');
+        if (standardDesc) {
+            standardDesc.textContent = isRemoval ? "Select a start date and we'll complete the removal within 3 business days."
+                                     : isOther   ? "Select a start date and we'll complete your service request within 3 business days."
+                                     :             "Select a start date and we'll install within 3 business days.";
+        }
+
+        var specificDesc = document.getElementById('specific-schedule-desc');
+        if (specificDesc) {
+            specificDesc.textContent = isRemoval ? "Need it on an exact date? We'll prioritize your removal."
+                                     : isOther   ? "Need it on an exact date? We'll prioritize your service request."
+                                     :             "Need it on an exact date? We'll prioritize your installation.";
+        }
+
+        var nextdayDesc = document.getElementById('nextday-schedule-desc');
+        if (nextdayDesc) {
+            nextdayDesc.textContent = isRemoval ? "Need it ASAP? We'll remove on the next available business day."
+                                    : isOther   ? "Need it ASAP? We'll handle your request on the next available business day."
+                                    :             "Need it ASAP? We'll install on the next available business day.";
+        }
+
+        var confirmText = document.getElementById('confirm-service-text');
+        if (confirmText) {
+            confirmText.textContent = isRemoval ? "We'll confirm your removal within 24 hours."
+                                    : isOther   ? "We'll confirm your service request within 24 hours."
+                                    :             "We'll confirm your installation within 24 hours.";
+        }
+    }
+
+    function setFieldsDisabled(sectionId, disabled) {
+        var section = document.getElementById(sectionId);
+        if (!section) return;
+        section.querySelectorAll('input, select, textarea').forEach(function(el) {
+            el.disabled = disabled;
+        });
+    }
+
+    function setupServiceTypeToggle() {
+        document.querySelectorAll('input[name="service_type"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                document.getElementById('install-fields').style.display = 'none';
+                document.getElementById('remove-fields').style.display = 'none';
+                document.getElementById('other-fields').style.display = 'none';
+                setFieldsDisabled('install-fields', true);
+                setFieldsDisabled('remove-fields', true);
+                setFieldsDisabled('other-fields', true);
+
+                if (this.value === 'install') {
+                    document.getElementById('install-fields').style.display = 'block';
+                    setFieldsDisabled('install-fields', false);
+                } else if (this.value === 'remove') {
+                    document.getElementById('remove-fields').style.display = 'block';
+                    setFieldsDisabled('remove-fields', false);
+                } else if (this.value === 'other') {
+                    document.getElementById('other-fields').style.display = 'block';
+                    setFieldsDisabled('other-fields', false);
+                }
+
+                updatePriceSummary();
+                updateServiceLanguage();
+            });
+        });
+    }
+
+    function setupSchedulingToggle() {
+        document.querySelectorAll('input[name="scheduling_type"]').forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                updateNextDayAvailability();
+                updatePriceSummary();
+            });
+        });
+    }
+
+    function updateNextDayAvailability() {
+        var nextDayInput = document.getElementById('schedule_nextday');
+        var nextDayOption = nextDayInput ? nextDayInput.closest('.scheduling-option') : null;
+        var note = document.getElementById('next-day-cutoff-note');
+        var nextDayDateEl = document.getElementById('next-day-date');
+        var plan = getNextDaySchedulingPlan();
+
+        if (!nextDayInput) return;
+
+        nextDayInput.disabled = false;
+        if (nextDayOption) nextDayOption.classList.remove('disabled');
+        if (nextDayDateEl) nextDayDateEl.textContent = formatDateFull(plan.scheduledDate);
+
+        if (note) {
+            if (plan.qualifiesForNextBusinessDay) {
+                note.textContent = 'Orders submitted after 5:00 AM and before 5:00 PM CT install on the next business day.';
+            } else {
+                note.textContent = 'Orders submitted before 5:00 AM or after 5:00 PM CT install on the following business day.';
+            }
+            note.classList.remove('unavailable');
+        }
+    }
+    
+    function setupDatePickers() {
+        var standardDate = document.getElementById('standard_date');
+        var specificDate = document.getElementById('specific_date');
+        
+        var minDate = getMinDate();
+        var minDateStr = toDateKey(minDate);
+        
+        standardDate.min = minDateStr;
+        specificDate.min = minDateStr;
+
+        updateNextDayAvailability();
+        if (window._txpNextDayInterval) clearInterval(window._txpNextDayInterval);
+        window._txpNextDayInterval = setInterval(updateNextDayAvailability, 60000);
+        
+        standardDate.addEventListener('change', function() {
+            var confirmation = document.getElementById('standard-confirmation');
+            if (!this.value) { confirmation.style.display = 'none'; return; }
+            var selectedDate = new Date(this.value + 'T12:00:00');
+            var errorMsg = '';
+
+            if (this.value < minDateStr) {
+                errorMsg = 'That date is too soon. Earliest available: ' + formatDateFull(minDate);
+            } else if (isSunday(selectedDate)) {
+                errorMsg = 'Sunday is not available. Please pick Monday–Saturday.';
+            } else if (!isBusinessDay(selectedDate)) {
+                errorMsg = 'That date is a holiday. Please pick another business day.';
+            }
+
+            if (errorMsg) {
+                this.value = '';
+                confirmation.innerHTML = '<span style="color: var(--texas-red); font-weight: 600;">' + errorMsg + '</span>';
+                confirmation.style.display = 'block';
+                return;
+            }
+
+            var windowEnd = addBusinessDays(selectedDate, 2);
+            confirmation.innerHTML = '<span id="standard-action-text">Your sign will be installed</span> between <strong id="window-start">' + formatDate(selectedDate) + '</strong> and <strong id="window-end">' + formatDate(windowEnd) + '</strong>';
+            confirmation.style.display = 'block';
+        });
+
+        specificDate.addEventListener('change', function() {
+            var confirmation = document.getElementById('specific-confirmation');
+            if (!this.value) { confirmation.style.display = 'none'; return; }
+            var selectedDate = new Date(this.value + 'T12:00:00');
+            var errorMsg = '';
+
+            if (this.value < minDateStr) {
+                errorMsg = 'That date is too soon. Earliest available: ' + formatDateFull(minDate);
+            } else if (isSunday(selectedDate)) {
+                errorMsg = 'Sunday is not available. Please pick Monday–Saturday.';
+            } else if (!isBusinessDay(selectedDate)) {
+                errorMsg = 'That date is a holiday. Please pick another business day.';
+            }
+
+            if (errorMsg) {
+                this.value = '';
+                confirmation.innerHTML = '<span style="color: var(--texas-red); font-weight: 600;">' + errorMsg + '</span>';
+                confirmation.style.display = 'block';
+                return;
+            }
+
+            confirmation.innerHTML = '<span id="specific-action-text">Your sign will be installed</span> on <strong id="specific-day">' + formatDateFull(selectedDate) + '</strong>';
+            confirmation.style.display = 'block';
+        });
+    }
+    
+    function setupAddonsToggle() {
+        // Exclude addon_riders — it has an inline onchange that calls updateRiderSelection(),
+        // which already calls updatePriceSummary(). Adding a second listener here would fire it twice.
+        document.querySelectorAll('.addon-item input:not(#addon_riders)').forEach(function(addon) {
+            addon.addEventListener('change', updatePriceSummary);
+        });
+    }
+    
+    function setupPostTypeToggle() {
+        document.querySelectorAll('input[name="post_type"]').forEach(function(pt) {
+            pt.addEventListener('change', updatePriceSummary);
+        });
+    }
+
+    function updateRiderSelection() {
+        var singleRidersSelect = document.getElementById('single_riders');
+        var riderPackCheckbox = document.getElementById('addon_riders');
+
+        if (riderPackCheckbox.checked) {
+            singleRidersSelect.value = '0';
+            singleRidersSelect.classList.remove('has-selection');
+        }
+
+        if (parseInt(singleRidersSelect.value) > 0) {
+            riderPackCheckbox.checked = false;
+            singleRidersSelect.classList.add('has-selection');
+        } else {
+            singleRidersSelect.classList.remove('has-selection');
+        }
+
+        updatePriceSummary();
+    }
+
+    // =============================================
+    // PRICE CALCULATION
+    // =============================================
+    
+    function calculatePrice() {
+        var basePrice = 0;
+        var addonsTotal = 0;
+        var ridersTotal = 0;
+        var rushFee = 0;
+
+        var serviceTypeEl = document.querySelector('input[name="service_type"]:checked');
+        var serviceType = serviceTypeEl ? serviceTypeEl.value : '';
+        var postTypeEl = document.querySelector('input[name="post_type"]:checked');
+        var postType = postTypeEl ? postTypeEl.value : '';
+        var scheduleTypeEl = document.querySelector('input[name="scheduling_type"]:checked');
+        var scheduleType = scheduleTypeEl ? scheduleTypeEl.value : '';
+
+        if (serviceType === 'install') {
+            if (postType === 'TX Posts Wood' || postType === 'Client Aluminum/PVC') {
+                basePrice = 65;
+            } else if (postType === 'Client Metal Frame') {
+                basePrice = 55;
+            } else if (postType === 'Client Custom/Large') {
+                basePrice = 60;
+            }
+        }
+
+        if (serviceType === 'other') {
+            var otherServiceEl = document.querySelector('[name="other_service"]');
+            var otherService = otherServiceEl ? otherServiceEl.value : '';
+            if (otherService === 'repair_pvc_aluminum') {
+                basePrice = 45;
+            } else if (otherService === 'repair_metal_frame') {
+                basePrice = 35;
+            } else if (otherService === 'repair_custom') {
+                basePrice = 40;
+            }
+            // maintenance_free stays at 0
+        }
+
+        if (serviceType === 'install') {
+            if (document.getElementById('addon_solar') && document.getElementById('addon_solar').checked) addonsTotal += 15;
+            if (document.getElementById('addon_brochure') && document.getElementById('addon_brochure').checked) addonsTotal += 15;
+            if (document.getElementById('addon_lockbox') && document.getElementById('addon_lockbox').checked) addonsTotal += 10;
+
+            var singleRiders = parseInt(document.getElementById('single_riders') ? document.getElementById('single_riders').value : 0);
+            var has3Pack = document.getElementById('addon_riders') ? document.getElementById('addon_riders').checked : false;
+
+            if (has3Pack) {
+                ridersTotal = 25;
+            } else if (singleRiders > 0) {
+                ridersTotal = singleRiders * 10;
+            }
+        }
+
+        if (scheduleType === 'specific_day' || scheduleType === 'next_day') {
+            rushFee = 50;
+        }
+
+        return {
+            base: basePrice,
+            addons: addonsTotal,
+            riders: ridersTotal,
+            rush: rushFee,
+            total: basePrice + addonsTotal + ridersTotal + rushFee
+        };
+    }
+    
+    function updatePriceSummary() {
+        var prices = calculatePrice();
+        var serviceTypeEl = document.querySelector('input[name="service_type"]:checked');
+        var serviceType = serviceTypeEl ? serviceTypeEl.value : '';
+
+        var priceBase = document.getElementById('price-base');
+        var priceAddons = document.getElementById('price-addons');
+        var priceRiders = document.getElementById('price-riders');
+        var priceRush = document.getElementById('price-rush');
+        var priceTotal = document.getElementById('price-total');
+
+        if (serviceType === 'remove') {
+            priceBase.querySelector('.price-value').textContent = 'FREE';
+            priceBase.querySelector('span:first-child').textContent = 'Removal Service';
+        } else if (serviceType === 'other') {
+            var otherSvcEl = document.querySelector('[name="other_service"]');
+            var otherSvc = otherSvcEl ? otherSvcEl.value : '';
+            var isRepairSvc = ['maintenance_free', 'repair_pvc_aluminum', 'repair_metal_frame', 'repair_custom'].indexOf(otherSvc) !== -1;
+            priceBase.querySelector('span:first-child').textContent = isRepairSvc ? 'Repair Service' : 'Service';
+            priceBase.querySelector('.price-value').textContent = (otherSvc === 'maintenance_free') ? 'FREE' : (prices.base > 0 ? '$' + prices.base : 'TBD');
+        } else {
+            priceBase.querySelector('.price-value').textContent = '$' + prices.base;
+            priceBase.querySelector('span:first-child').textContent = 'Base Installation';
+        }
+
+        priceAddons.style.display = prices.addons > 0 ? 'flex' : 'none';
+        if (prices.addons > 0) priceAddons.querySelector('.price-value').textContent = '+$' + prices.addons;
+
+        priceRiders.style.display = prices.riders > 0 ? 'flex' : 'none';
+        if (prices.riders > 0) priceRiders.querySelector('.price-value').textContent = '+$' + prices.riders;
+
+        priceRush.style.display = prices.rush > 0 ? 'flex' : 'none';
+
+        if (serviceType === 'remove' && prices.total === 0) {
+            priceTotal.textContent = 'FREE';
+        } else if (serviceType === 'other') {
+            var otherSvcEl = document.querySelector('[name="other_service"]');
+            var otherSvc = otherSvcEl ? otherSvcEl.value : '';
+            priceTotal.textContent = (otherSvc === 'maintenance_free' && prices.total === 0) ? 'FREE' : (prices.total > 0 ? '$' + prices.total : 'TBD');
+        } else {
+            priceTotal.textContent = '$' + prices.total;
+        }
+    }
+    
+    // =============================================
+    // REVIEW POPULATION
+    // =============================================
+    
+    function populateReview() {
+        var form = document.getElementById('requestForm');
+        var prices = calculatePrice();
+        
+        document.getElementById('review-name').textContent = form.first_name.value + ' ' + form.last_name.value;
+        document.getElementById('review-phone').textContent = form.phone.value;
+        document.getElementById('review-email').textContent = form.email.value;
+        
+        var serviceTypeEl = document.querySelector('input[name="service_type"]:checked');
+        var serviceType = serviceTypeEl ? serviceTypeEl.value : '';
+        var otherServiceEl = document.querySelector('[name="other_service"]');
+        var otherServiceReviewVal = otherServiceEl ? otherServiceEl.value : '';
+        document.getElementById('review-service').textContent = getServiceLabel(serviceType, otherServiceReviewVal) || '-';
+        
+        var address = '';
+        if (serviceType === 'install') {
+            var addrEl = document.querySelector('#install-fields [name="install_address"]');
+            var cityEl = document.querySelector('#install-fields [name="city"]');
+            var zipEl  = document.querySelector('#install-fields [name="zip"]');
+            address = (addrEl ? addrEl.value : '') + ', ' + (cityEl ? cityEl.value : '') + ' ' + (zipEl ? zipEl.value : '');
+        } else if (serviceType === 'remove') {
+            var addrEl = document.querySelector('#remove-fields [name="install_address"]');
+            var cityEl = document.querySelector('#remove-fields [name="city"]');
+            var zipEl  = document.querySelector('#remove-fields [name="zip"]');
+            address = (addrEl ? addrEl.value : '') + ', ' + (cityEl ? cityEl.value : '') + ' ' + (zipEl ? zipEl.value : '');
+        } else {
+            address = form.other_address.value || 'See notes';
+        }
+        document.getElementById('review-address').textContent = address;
+        
+        var postRow = document.getElementById('review-post-row');
+        var addonsRow = document.getElementById('review-addons-row');
+        var ridersRow = document.getElementById('review-riders-row');
+
+        if (serviceType === 'install') {
+            var postTypeEl = document.querySelector('input[name="post_type"]:checked');
+            var postType = postTypeEl ? postTypeEl.value : '';
+            var postLabels = {
+                'TX Posts Wood': 'TX POSTS Wood Post ($65)',
+                'Client Aluminum/PVC': 'Your PVC/Aluminum Post ($65)',
+                'Client Metal Frame': 'Your Metal Frame ($55)',
+                'Client Custom/Large': 'Your Custom Posts ($60)'
+            };
+            document.getElementById('review-post').textContent = postLabels[postType] || '-';
+            postRow.style.display = 'flex';
+
+            var addons = [];
+            if (document.getElementById('addon_solar') && document.getElementById('addon_solar').checked) addons.push('Solar Light');
+            if (document.getElementById('addon_brochure') && document.getElementById('addon_brochure').checked) addons.push('Brochure Box');
+            if (document.getElementById('addon_lockbox') && document.getElementById('addon_lockbox').checked) addons.push('Lockbox');
+
+            if (addons.length > 0) {
+                document.getElementById('review-addons').textContent = addons.join(', ');
+                addonsRow.style.display = 'flex';
+            } else {
+                addonsRow.style.display = 'none';
+            }
+
+            var singleRiders = parseInt(document.getElementById('single_riders') ? document.getElementById('single_riders').value : 0);
+            var has3Pack = document.getElementById('addon_riders') ? document.getElementById('addon_riders').checked : false;
+
+            if (has3Pack) {
+                document.getElementById('review-riders').textContent = 'Rider 3-Pack (+$25)';
+                ridersRow.style.display = 'flex';
+            } else if (singleRiders > 0) {
+                document.getElementById('review-riders').textContent = singleRiders + ' Single Rider' + (singleRiders > 1 ? 's' : '') + ' (+$' + (singleRiders * 10) + ')';
+                ridersRow.style.display = 'flex';
+            } else {
+                ridersRow.style.display = 'none';
+            }
+        } else {
+            postRow.style.display = 'none';
+            addonsRow.style.display = 'none';
+            ridersRow.style.display = 'none';
+        }
+        
+        var scheduleTypeEl = document.querySelector('input[name="scheduling_type"]:checked');
+        var scheduleType = scheduleTypeEl ? scheduleTypeEl.value : '';
+        var scheduleLabels = {
+            'standard': 'Standard (3-day window)',
+            'specific_day': 'Specific Day (+$50)',
+            'next_day': 'Next Business Day (+$50)'
+        };
+        document.getElementById('review-schedule-type').textContent = scheduleLabels[scheduleType] || '-';
+        
+        var scheduleDate = '';
+        if (scheduleType === 'standard') {
+            var ws = document.getElementById('window-start');
+            var we = document.getElementById('window-end');
+            scheduleDate = (ws ? ws.textContent : '') + ' - ' + (we ? we.textContent : '');
+        } else if (scheduleType === 'specific_day') {
+            scheduleDate = document.getElementById('specific-day').textContent;
+        } else if (scheduleType === 'next_day') {
+            scheduleDate = document.getElementById('next-day-date').textContent;
+        }
+        document.getElementById('review-schedule-date').textContent = scheduleDate;
+        
+        var finalBase = document.getElementById('final-base');
+        var finalAddons = document.getElementById('final-addons');
+        var finalRiders = document.getElementById('final-riders');
+        var finalRush = document.getElementById('final-rush');
+        var finalTotal = document.getElementById('final-total');
+
+        if (serviceType === 'remove') {
+            finalBase.querySelector('.price-value').textContent = 'FREE';
+            finalBase.querySelector('span:first-child').textContent = 'Removal Service';
+        } else if (serviceType === 'other') {
+            var isRepairReview = ['maintenance_free', 'repair_pvc_aluminum', 'repair_metal_frame', 'repair_custom'].indexOf(otherServiceReviewVal) !== -1;
+            finalBase.querySelector('span:first-child').textContent = isRepairReview ? 'Repair Service' : 'Service';
+            finalBase.querySelector('.price-value').textContent = (otherServiceReviewVal === 'maintenance_free') ? 'FREE' : (prices.base > 0 ? '$' + prices.base : 'TBD');
+        } else {
+            finalBase.querySelector('.price-value').textContent = '$' + prices.base;
+            finalBase.querySelector('span:first-child').textContent = 'Base Service';
+        }
+
+        finalAddons.style.display = prices.addons > 0 ? 'flex' : 'none';
+        if (prices.addons > 0) finalAddons.querySelector('.price-value').textContent = '+$' + prices.addons;
+
+        finalRiders.style.display = prices.riders > 0 ? 'flex' : 'none';
+        if (prices.riders > 0) finalRiders.querySelector('.price-value').textContent = '+$' + prices.riders;
+
+        finalRush.style.display = prices.rush > 0 ? 'flex' : 'none';
+
+        if (serviceType === 'remove' && prices.total === 0) {
+            finalTotal.textContent = 'FREE';
+        } else if (serviceType === 'other') {
+            finalTotal.textContent = (otherServiceReviewVal === 'maintenance_free' && prices.total === 0) ? 'FREE' : (prices.total > 0 ? '$' + prices.total : 'TBD');
+        } else {
+            finalTotal.textContent = '$' + prices.total;
+        }
+
+        // Sign disposition for removals
+        var dispositionRow = document.getElementById('review-disposition-row');
+        if (serviceType === 'remove') {
+            var dispositionEl = document.querySelector('[name="sign_disposition"]');
+            var dispositionLabels = {
+                'storage': 'Keep in TX POSTS storage',
+                'return_brokerage': 'Return to brokerage',
+                'return_address': 'Return to specific address'
+            };
+            var dispositionVal = dispositionEl ? dispositionEl.value : '';
+            var dispositionText = dispositionLabels[dispositionVal] || '-';
+            var returnAddrInput = document.querySelector('[name="return_address"]');
+            if (dispositionVal === 'return_address' && returnAddrInput && returnAddrInput.value.trim()) {
+                dispositionText += ' (' + returnAddrInput.value.trim() + ')';
+            }
+            document.getElementById('review-disposition').textContent = dispositionText;
+            dispositionRow.style.display = 'flex';
+        } else {
+            dispositionRow.style.display = 'none';
+        }
+
+        // Show scheduling section in review for all service types
+        var schedulingSection = document.getElementById('review-scheduling-section');
+        if (schedulingSection) {
+            schedulingSection.style.display = 'block';
+        }
+    }
+
+    // =============================================
+    // FORM SUBMISSION
+    // =============================================
+
+    function getServiceAddress(formData, serviceType) {
+        // install and remove both use install_address/city/zip — disabled inputs ensure
+        // only the active section's values are included in FormData
+        if (serviceType === 'install' || serviceType === 'remove') {
+            return {
+                address: cleanValue(formData.get('install_address')),
+                city: cleanValue(formData.get('city')),
+                zip: cleanValue(formData.get('zip'))
+            };
+        }
+
+        return {
+            address: cleanValue(formData.get('other_address')),
+            city: '',
+            zip: ''
+        };
+    }
+
+    function getServiceLabel(serviceType, otherService) {
+        if (serviceType === 'other' && otherService) {
+            var otherLabels = {
+                'maintenance_free': 'Repair / Straighten — TX Posts Wood Post (Free)',
+                'repair_pvc_aluminum': 'Repair / Straighten — PVC/Aluminum Post ($45)',
+                'repair_metal_frame': 'Repair / Straighten — Metal Frame ($35)',
+                'repair_custom': 'Repair / Straighten — Custom Post ($40)',
+                'rider_swap': 'Rider Swap',
+                'lockbox_only': 'Lockbox Install Only',
+                'other': 'Other (See Notes)'
+            };
+            return otherLabels[otherService] || 'Other Service';
+        }
+        var serviceLabels = {
+            install: 'Sign Post Installation',
+            remove: 'Sign Post Removal',
+            other: 'Other Service'
+        };
+        return serviceLabels[serviceType] || 'Service Request';
+    }
+
+    function buildOpportunityKey(phoneNumber, emailAddress, address, serviceType) {
+        var rawKey = [
+            cleanValue(phoneNumber || emailAddress || 'unknown'),
+            cleanValue(serviceType || 'service'),
+            cleanValue(address).toLowerCase()
+        ].join('|');
+
+        return rawKey.replace(/[^a-z0-9|]/gi, '').slice(0, 120);
+    }
+
+    function buildOpportunityName(serviceLabel, address, fullName) {
+        var pieces = [serviceLabel || 'Service Request'];
+        if (address) pieces.push(address);
+        if (fullName) pieces.push(fullName);
+        return pieces.join(' | ').slice(0, 120);
+    }
+
+    function getSelectedAddons(formData, hasRiderPack, singleRiderCount) {
+        var selected = [];
+        if (formData.get('addon_solar')) selected.push('Solar Light');
+        if (formData.get('addon_brochure')) selected.push('Brochure Box');
+        if (formData.get('addon_lockbox')) selected.push('Lockbox');
+        if (hasRiderPack) selected.push('Rider 3-Pack');
+        if (!hasRiderPack && singleRiderCount > 0) {
+            selected.push(singleRiderCount + ' Single Rider' + (singleRiderCount > 1 ? 's' : ''));
+        }
+        return selected;
+    }
+
+    function clearSubmissionError() {
+        var errorEl = document.getElementById('submission-error');
+        if (!errorEl) return;
+        errorEl.textContent = '';
+        errorEl.classList.remove('active');
+    }
+
+    function showSubmissionError(message) {
+        var errorEl = document.getElementById('submission-error');
+        if (!errorEl) {
+            alert(message);
+            return;
+        }
+
+        errorEl.textContent = message;
+        errorEl.classList.add('active');
+        errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    function showSuccessState(confirmationCode) {
+        document.getElementById('confirmation-code').textContent = confirmationCode;
+        document.getElementById('requestForm').style.display = 'none';
+        document.getElementById('form-success').classList.add('active');
+        var progressContainer = document.querySelector('.progress-container');
+        if (progressContainer) progressContainer.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    async function sendWebhookPayload(payload) {
+        var response = await fetch(GHL_WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            keepalive: true
+        });
+
+        if (!response.ok) {
+            throw new Error('Webhook request failed with status ' + response.status);
+        }
+    }
+
+    function sendWebhookBeacon(payload) {
+        if (!navigator.sendBeacon) return false;
+
+        try {
+            var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+            return navigator.sendBeacon(GHL_WEBHOOK_URL, blob);
+        } catch (error) {
+            console.error('Beacon fallback failed:', error);
+            return false;
+        }
+    }
+    
+    function generateConfirmationCode() {
+        var timestamp = Date.now().toString(36).toUpperCase();
+        var random = Math.random().toString(36).substring(2, 6).toUpperCase();
+        return 'TXP-' + timestamp.slice(-4) + random;
+    }
+    
+    async function submitForm(e) {
+        e.preventDefault();
+        
+        var submitBtn = document.getElementById('submitBtn');
+        if (submitBtn.dataset.submitting === 'true') return;
+
+        submitBtn.dataset.submitting = 'true';
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        clearSubmissionError();
+        
+        var form = document.getElementById('requestForm');
+        var formData = new FormData(form);
+        var prices = calculatePrice();
+        var urlContext = getUrlContext();
+        
+        var firstName = cleanValue(formData.get('first_name'));
+        var lastName = cleanValue(formData.get('last_name'));
+        var fullName = cleanValue((firstName + ' ' + lastName).trim());
+        var phone = cleanValue(formData.get('phone'));
+        var email = cleanValue(formData.get('email')).toLowerCase();
+        var serviceType = cleanValue(formData.get('service_type'));
+        var otherServiceVal = cleanValue(formData.get('other_service'));
+        var serviceLabel = getServiceLabel(serviceType, otherServiceVal);
+        var serviceAddress = getServiceAddress(formData, serviceType);
+        var singleRiderCount = toInt(document.getElementById('single_riders') ? document.getElementById('single_riders').value : 0);
+        var hasRiderPack = !!(document.getElementById('addon_riders') && document.getElementById('addon_riders').checked);
+        var riderSelection = hasRiderPack ? '3-Pack' : (singleRiderCount > 0 ? singleRiderCount + ' Single' : 'None');
+        var scheduleType = cleanValue(formData.get('scheduling_type'));
+        var nextDayPlan = scheduleType === 'next_day' ? getNextDaySchedulingPlan() : null;
+        var scheduledDate = '';
+        if (scheduleType === 'standard') {
+            scheduledDate = cleanValue(formData.get('standard_date'));
+        } else if (scheduleType === 'specific_day') {
+            scheduledDate = cleanValue(formData.get('specific_date'));
+        } else if (scheduleType === 'next_day' && nextDayPlan) {
+            scheduledDate = toDateKey(nextDayPlan.scheduledDate);
+        }
+        if (!scheduledDate) {
+            scheduledDate = cleanValue(formData.get('standard_date')) || cleanValue(formData.get('specific_date')) || toDateKey(getNextBusinessDay());
+        }
+
+        // Append return address to notes if returning sign to a specific address
+        var notesRaw = cleanValue(formData.get('notes'));
+        var returnAddress = cleanValue(formData.get('return_address'));
+        if (returnAddress) {
+            notesRaw = notesRaw ? notesRaw + '\n\nReturn sign to: ' + returnAddress : 'Return sign to: ' + returnAddress;
+        }
+
+        var selectedAddons = getSelectedAddons(formData, hasRiderPack, singleRiderCount);
+        var confirmationCode = generateConfirmationCode();
+        var opportunityName = buildOpportunityName(serviceLabel, serviceAddress.address, fullName);
+        var opportunityKey = buildOpportunityKey(normalizePhone(phone), email, serviceAddress.address, serviceType);
+        var submittedAt = new Date().toISOString();
+        var shouldUpdateOpportunity = urlContext.opportunity_mode === 'update' && !!urlContext.opportunity_id;
+        
+        var payload = {
+            first_name: firstName,
+            last_name: lastName,
+            full_name: fullName,
+            phone: phone,
+            phone_normalized: normalizePhone(phone),
+            email: email,
+            brokerage: cleanValue(formData.get('brokerage')),
+            sms_consent: formData.get('sms_consent') ? 'Yes' : 'No',
+            service_type: serviceType,
+            service_label: serviceLabel,
+            install_address: serviceAddress.address,
+            address: serviceAddress.address,
+            city: serviceAddress.city,
+            zip: serviceAddress.zip,
+            other_address: cleanValue(formData.get('other_address')),
+            post_type: cleanValue(formData.get('post_type')),
+            addon_solar: formData.get('addon_solar') ? 'Yes' : 'No',
+            addon_brochure: formData.get('addon_brochure') ? 'Yes' : 'No',
+            addon_lockbox: formData.get('addon_lockbox') ? 'Yes' : 'No',
+            addon_riders: hasRiderPack ? 'Yes' : 'No',
+            selected_addons: selectedAddons,
+            selected_addons_csv: selectedAddons.join(', '),
+            single_rider_count: singleRiderCount,
+            rider_3pack: hasRiderPack ? 'Yes' : 'No',
+            rider_selection: riderSelection,
+            scheduling_type: scheduleType,
+            scheduled_date: scheduledDate,
+            window_start: document.getElementById('window-start') ? document.getElementById('window-start').textContent : '',
+            window_end: document.getElementById('window-end') ? document.getElementById('window-end').textContent : '',
+            base_price: prices.base,
+            addons_total: prices.addons,
+            riders_total: prices.riders,
+            rush_fee: prices.rush,
+            total_price: prices.total,
+            opportunity_value: prices.total,
+            gate_code: cleanValue(formData.get('gate_code')),
+            notes: notesRaw,
+            sign_disposition: cleanValue(formData.get('sign_disposition')),
+            other_service: cleanValue(formData.get('other_service')),
+            other_description: cleanValue(formData.get('other_description')),
+            opportunity_action: shouldUpdateOpportunity ? 'update' : 'create',
+            opportunity_status: 'open',
+            create_new_opportunity: !shouldUpdateOpportunity,
+            update_existing_opportunity: shouldUpdateOpportunity,
+            opportunity_name: opportunityName,
+            opportunity_key: opportunityKey,
+            contact_id: urlContext.contact_id,
+            opportunity_id: shouldUpdateOpportunity ? urlContext.opportunity_id : '',
+            pipeline_id: urlContext.pipeline_id,
+            pipeline_stage_id: urlContext.pipeline_stage_id,
+            source_page: window.location.href,
+            referrer: document.referrer || '',
+            form_source: FORM_SOURCE,
+            utm_source: urlContext.utm_source,
+            utm_medium: urlContext.utm_medium,
+            utm_campaign: urlContext.utm_campaign,
+            utm_term: urlContext.utm_term,
+            utm_content: urlContext.utm_content,
+            gclid: urlContext.gclid,
+            fbclid: urlContext.fbclid,
+            confirmation_code: confirmationCode,
+            submitted_at: submittedAt,
+            crm_sync_version: '2026-02-09'
+        };
+        
+        try {
+            await sendWebhookPayload(payload);
+            showSuccessState(payload.confirmation_code);
+        } catch (error) {
+            console.error('Submission error:', error);
+
+            var beaconSent = sendWebhookBeacon(payload);
+            if (beaconSent) {
+                showSuccessState(payload.confirmation_code);
+            } else {
+                showSubmissionError('We could not submit your request right now. Please tap "Submit Request" again, or call (817) 760-8288.');
+            }
+        } finally {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            submitBtn.dataset.submitting = 'false';
+        }
+    }
+    
+    // =============================================
+    // TOOLTIP
+    // =============================================
+    
+    function toggleTooltip(id) {
+        var tooltip = document.getElementById(id);
+        var isActive = tooltip.classList.contains('active');
+        document.querySelectorAll('.tooltip').forEach(function(t) { t.classList.remove('active'); });
+        if (!isActive) tooltip.classList.add('active');
+    }
+    
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.info-btn') && !e.target.closest('.tooltip-content')) {
+            document.querySelectorAll('.tooltip').forEach(function(t) { t.classList.remove('active'); });
+        }
+    });
+    
+    // =============================================
+    // BUTTON NAVIGATION SETUP
+    // =============================================
+
+    function setupButtonNavigation() {
+        document.querySelectorAll('.btn-next').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                nextStep();
+            });
+        });
+
+        document.querySelectorAll('.btn-back').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                prevStep();
+            });
+        });
+    }
+
+    // =============================================
+    // INITIALIZATION
+    // =============================================
+
+    document.addEventListener('DOMContentLoaded', function() {
+        ensureViewportMetaTag();
+        setMobileNavOpen(false);
+        updateProgress();
+        setupServiceTypeToggle();
+        setupSchedulingToggle();
+        setupDatePickers();
+        setupAddonsToggle();
+        setupPostTypeToggle();
+        setupButtonNavigation();
+
+        // Show repair turnaround note when a repair option is selected
+        var otherServiceSelect = document.getElementById('other_service_select');
+        var repairNote = document.getElementById('repair-note');
+        if (otherServiceSelect && repairNote) {
+            otherServiceSelect.addEventListener('change', function() {
+                var isRepair = ['maintenance_free', 'repair_pvc_aluminum', 'repair_metal_frame', 'repair_custom'].indexOf(this.value) !== -1;
+                repairNote.style.display = isRepair ? 'block' : 'none';
+                updatePriceSummary();
+            });
+        }
+
+        // Show/hide return address input based on sign disposition
+        var signDisposition = document.getElementById('sign_disposition');
+        var returnAddressGroup = document.getElementById('return-address-group');
+        if (signDisposition && returnAddressGroup) {
+            signDisposition.addEventListener('change', function() {
+                returnAddressGroup.style.display = this.value === 'return_address' ? 'block' : 'none';
+            });
+        }
+
+        document.getElementById('requestForm').addEventListener('submit', submitForm);
+
+        // Initial price update
+        updatePriceSummary();
+    });
+    </script>
+</body>
+</html>

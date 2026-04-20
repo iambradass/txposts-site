@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | TX POSTS</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1A3A6E;
+            --navy-dark: #0F2847;
+            --texas-red: #BF0A30;
+            --texas-red-dark: #8B0722;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --medium-gray: #6C757D;
+            --dark-gray: #343A40;
+            --black: #1A1A1A;
+            
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            color: var(--black);
+            line-height: 1.6;
+            background: var(--white);
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+        
+        .nav-cta {
+            background: var(--texas-red);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--texas-red-dark) !important;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(48px, 8vw, 72px);
+            color: var(--white);
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        
+        .content h2 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            color: var(--navy);
+            margin: 40px 0 16px;
+            letter-spacing: 1px;
+        }
+        
+        .content h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .content h3 {
+            font-size: 18px;
+            color: var(--dark-gray);
+            margin: 24px 0 12px;
+        }
+        
+        .content p {
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        
+        .content ul, .content ol {
+            margin: 0 0 16px 24px;
+            color: var(--dark-gray);
+        }
+        
+        .content li {
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+        
+        .content a {
+            color: var(--texas-red);
+            text-decoration: none;
+        }
+        
+        .content a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight-box {
+            background: var(--off-white);
+            border-left: 4px solid var(--texas-red);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--navy);
+        }
+        
+        .effective-date {
+            color: var(--medium-gray);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+        
+        /* SMS Summary Box */
+        .sms-summary {
+            background: var(--navy);
+            color: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            margin: 32px 0;
+        }
+        
+        .sms-summary h3 {
+            color: var(--white);
+            font-family: var(--font-display);
+            font-size: 22px;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .sms-summary p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 12px;
+        }
+        
+        .sms-summary ul {
+            margin-left: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .sms-summary .sms-highlight {
+            background: var(--texas-red);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .sms-summary .sms-highlight p {
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--navy-dark);
+            color: var(--white);
+            padding: 60px 0 40px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+        
+        .footer h4 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 15px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        
+        .footer-contact a {
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-legal a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-legal a:hover {
+            color: var(--white);
+        }
+        
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .page-header {
+                padding: 120px 0 60px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png" alt="TX POSTS">
+            </a>
+            <ul class="nav-links">
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/#service-area">Service Area</a></li>
+                <li><a href="/faq">FAQ</a></li>
+                <li><a href="/order" class="nav-cta">Request Install</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>TERMS OF SERVICE</h1>
+            <p>Please read these terms carefully before using our services</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content">
+        <p class="effective-date"><strong>Effective Date:</strong> February 4, 2026 | <strong>Last Updated:</strong> February 4, 2026</p>
+
+        <p>Welcome to TX POSTS. These Terms of Service ("Terms") govern your use of the txposts.com website and the sign post installation services provided by TX POSTS ("we," "us," or "our"). By using our website or services, you agree to these Terms.</p>
+
+        <h2>ACCEPTANCE OF TERMS</h2>
+        <p>By accessing our website, submitting a service request, or using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our <a href="/privacy">Privacy Policy</a>.</p>
+        
+        <div class="highlight-box">
+            <p><strong>Age Requirement:</strong> You must be at least 18 years of age to use our services. By using our website or services, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into these Terms.</p>
+        </div>
+
+        <h2>SERVICES DESCRIPTION</h2>
+        <p>TX POSTS provides real estate sign post installation, removal, and related services to real estate professionals in the Dallas-Fort Worth area. Our services include:</p>
+        <ul>
+            <li>Sign post installation (wood posts and metal frames)</li>
+            <li>Sign panel and rider hanging</li>
+            <li>Sign post removal</li>
+            <li>Sign storage</li>
+            <li>Maintenance and repairs</li>
+            <li>Add-on services (solar lights, brochure boxes, lockbox installation)</li>
+        </ul>
+
+        <h2>SMS/TEXT MESSAGE TERMS</h2>
+        
+        <div class="sms-summary">
+            <h3>SMS COMMUNICATIONS SUMMARY</h3>
+            <p>By providing your phone number and using our services, you consent to receive SMS/text messages from TX POSTS. Here's what you need to know:</p>
+            
+            <p><strong>What Messages You'll Receive:</strong></p>
+            <ul>
+                <li>Service request confirmations</li>
+                <li>Installation scheduling and reminders</li>
+                <li>"On my way" notifications</li>
+                <li>Job completion confirmations</li>
+                <li>Sign status updates</li>
+                <li>Invoice and billing notifications</li>
+                <li>Responses to your inquiries</li>
+            </ul>
+            
+            <div class="sms-highlight">
+                <p>📱 Message and data rates may apply. Message frequency varies based on your service activity.</p>
+            </div>
+        </div>
+
+        <h3>Description of SMS Use Cases</h3>
+        <p>When you opt-in to receive SMS messages from TX POSTS, you may receive text messages for the following purposes:</p>
+        <ul>
+            <li><strong>Service Confirmations:</strong> Confirmation messages when you submit a service request</li>
+            <li><strong>Appointment Reminders:</strong> Reminders about your scheduled installation (24 hours and 2 hours before)</li>
+            <li><strong>Status Updates:</strong> "On my way" notifications when our installer is heading to your property</li>
+            <li><strong>Completion Notifications:</strong> Messages confirming your service has been completed</li>
+            <li><strong>Sign Status Information:</strong> Updates about your signs in storage and installed locations (when you text "STATUS")</li>
+            <li><strong>Billing Notifications:</strong> Monthly invoice reminders and payment confirmations</li>
+            <li><strong>Customer Service:</strong> Responses to your questions and requests</li>
+        </ul>
+
+        <h3>How to Opt-Out of SMS Messages</h3>
+        <div class="highlight-box">
+            <p><strong>To stop receiving SMS messages from TX POSTS:</strong></p>
+            <p>Reply <strong>STOP</strong> to any message you receive from us.</p>
+            <p>You will receive a one-time confirmation that you have been unsubscribed. After opting out, you will no longer receive SMS messages from TX POSTS unless you opt back in.</p>
+            <p>Opting out of SMS does not affect your ability to use our services or receive communications via other methods (email, phone calls).</p>
+        </div>
+
+        <h3>SMS Help and Support</h3>
+        <p>For help with SMS messages or questions about our text messaging service:</p>
+        <ul>
+            <li>Reply <strong>HELP</strong> to any message</li>
+            <li>Call us at <a href="tel:8177608288">(817) 760-8288</a></li>
+            <li>Email us at support@txposts.com</li>
+        </ul>
+
+        <h3>Message and Data Rates</h3>
+        <div class="highlight-box">
+            <p><strong>Message and data rates may apply.</strong> Standard message and data rates from your wireless carrier may apply to SMS messages sent to and from TX POSTS. Please contact your wireless carrier for details about your messaging plan and any applicable charges.</p>
+        </div>
+
+        <h3>Carrier Liability Disclaimer</h3>
+        <p>TX POSTS and mobile carriers (including but not limited to AT&T, Verizon, T-Mobile, Sprint, and others) are not liable for delayed or undelivered messages. Message delivery is subject to effective transmission from your network operator and is outside our control. We cannot guarantee that messages will be delivered or delivered in a timely manner.</p>
+
+        <h2>CUSTOMER SUPPORT CONTACT</h2>
+        <p>If you have any questions, concerns, or need assistance with our services or these Terms, please contact us:</p>
+        <div class="highlight-box">
+            <p><strong>TX POSTS Customer Support</strong></p>
+            <p>📞 Phone: <a href="tel:8177608288">(817) 760-8288</a></p>
+            <p>✉️ Email: support@txposts.com</p>
+            <p>🕐 Hours: Monday - Saturday, 8:00 AM - 6:00 PM Central Time</p>
+        </div>
+
+        <h2>SERVICE AREA</h2>
+        <p>TX POSTS currently provides services in Tarrant County, Texas, and surrounding areas in the Dallas-Fort Worth Metroplex. Service availability may be limited in certain locations. Please contact us to confirm service availability for your property address.</p>
+
+        <h2>PRICING AND PAYMENT</h2>
+        <p>Our pricing is listed on our website and is subject to change. Current standard rates include:</p>
+        <ul>
+            <li>TX POSTS Wood Post Installation: $65</li>
+            <li>Metal Frame Installation: $55-60</li>
+            <li>Post Removal: FREE</li>
+            <li>Rush Service (Next Day/Specific Day): +$50</li>
+        </ul>
+        <p>Additional add-ons and services are available at additional cost. Full pricing details are provided during the order process.</p>
+
+        <h3>Billing Terms</h3>
+        <p>TX POSTS operates on a monthly invoicing model. All services rendered during a calendar month are compiled into a single invoice sent on the 1st of the following month. Payment is due within 30 days of invoice date.</p>
+
+        <h2>SCHEDULING AND CANCELLATIONS</h2>
+        <p>We offer flexible scheduling options:</p>
+        <ul>
+            <li><strong>Standard Scheduling:</strong> 2-3 business day window (included)</li>
+            <li><strong>Specific Day:</strong> Choose your exact installation date (+$50)</li>
+            <li><strong>Next Business Day:</strong> Priority installation (+$50)</li>
+        </ul>
+        <p>To cancel or reschedule a service, please contact us at least 24 hours in advance. Rush fees for cancelled rush orders may not be refunded.</p>
+
+        <h2>LIMITATION OF LIABILITY</h2>
+        <p>To the maximum extent permitted by law, TX POSTS shall not be liable for:</p>
+        <ul>
+            <li>Indirect, incidental, special, consequential, or punitive damages</li>
+            <li>Loss of profits, data, or business opportunities</li>
+            <li>Damages resulting from circumstances beyond our reasonable control</li>
+            <li>Delays or failures in SMS message delivery</li>
+        </ul>
+        <p>Our total liability for any claim arising from our services shall not exceed the amount you paid for the specific service giving rise to the claim.</p>
+
+        <h2>INDEMNIFICATION</h2>
+        <p>You agree to indemnify and hold harmless TX POSTS, its owners, employees, and contractors from any claims, damages, losses, or expenses arising from your use of our services or violation of these Terms.</p>
+
+        <h2>INTELLECTUAL PROPERTY</h2>
+        <p>All content on our website, including text, graphics, logos, and images, is the property of TX POSTS and is protected by copyright and trademark laws. You may not use, reproduce, or distribute our content without our written permission.</p>
+
+        <h2>PRIVACY</h2>
+        <p>Your use of our services is also governed by our Privacy Policy, which describes how we collect, use, and protect your personal information. Please review our <a href="/privacy">Privacy Policy</a> for more information.</p>
+
+        <h2>MODIFICATIONS TO TERMS</h2>
+        <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the updated Terms on our website and updating the "Last Updated" date. Your continued use of our services after any changes indicates your acceptance of the modified Terms.</p>
+
+        <h2>GOVERNING LAW</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Texas, without regard to its conflict of law provisions. Any disputes arising from these Terms or our services shall be resolved in the courts of Tarrant County, Texas.</p>
+
+        <h2>SEVERABILITY</h2>
+        <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>
+
+        <h2>ENTIRE AGREEMENT</h2>
+        <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and TX POSTS regarding your use of our services and supersede any prior agreements.</p>
+
+        <h2>CONTACT INFORMATION</h2>
+        <p>If you have any questions about these Terms of Service, please contact us:</p>
+        <p>
+            <strong>TX POSTS</strong><br>
+            Phone: <a href="tel:8177608288">(817) 760-8288</a><br>
+            Email: support@txposts.com<br>
+            Service Area: Tarrant County, Texas
+        </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="nav-logo">
+                        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png" alt="TX POSTS" style="height: 50px;">
+                    </a>
+                    <p>Professional real estate sign post installation serving Tarrant County and the greater Dallas-Fort Worth area for over 18 years.</p>
+                </div>
+                <div>
+                    <h4>QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="/#services">Services</a></li>
+                        <li><a href="/#pricing">Pricing</a></li>
+                        <li><a href="/#service-area">Service Area</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>SERVICES</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Post Installation</a></li>
+                        <li><a href="#">Post Removal</a></li>
+                        <li><a href="#">Sign Storage</a></li>
+                        <li><a href="#">Rush Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>CONTACT</h4>
+                    <p>Phone: <a href="tel:8177608288">(817) 760-8288</a></p>
+                    <p>Email: support@txposts.com</p>
+                    <p>Tarrant County, Texas</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 TX POSTS. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
