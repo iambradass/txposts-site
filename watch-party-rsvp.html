@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSVP – The American Dream Watch Party | TX Posts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A3A6E;
+    --navy-dark: #0F2847;
+    --red: #BF0A30;
+    --red-dark: #8B0722;
+    --white: #FFFFFF;
+    --off-white: #F8F9FA;
+    --light-gray: #E9ECEF;
+    --medium-gray: #6C757D;
+    --dark-gray: #343A40;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--navy-dark);
+    color: var(--white);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---- HEADER ---- */
+  .header {
+    background: rgba(15, 40, 71, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--red);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header img {
+    height: 44px;
+    width: auto;
+  }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .event-tag {
+    display: inline-block;
+    background: var(--red);
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 10vw, 72px);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero h1 .show-name {
+    color: var(--red);
+    display: block;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 28px;
+    position: relative;
+  }
+
+  .event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .event-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 420px;
+    text-align: left;
+  }
+  .event-detail-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .event-detail-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .event-detail-text span {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .perks-banner {
+    background: rgba(191, 10, 48, 0.15);
+    border: 1px solid rgba(191, 10, 48, 0.4);
+    border-radius: 10px;
+    padding: 14px 20px;
+    max-width: 420px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .perks-banner p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.5;
+  }
+  .perks-banner strong {
+    color: #FFD700;
+  }
+
+  /* ---- FORM SECTION ---- */
+  .form-section {
+    background: var(--off-white);
+    padding: 40px 24px 60px;
+  }
+  .form-card {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  }
+  .form-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--navy);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .form-subtitle {
+    font-size: 14px;
+    color: var(--medium-gray);
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .form-group {
+    margin-bottom: 16px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 6px;
+  }
+  .form-group label .req {
+    color: var(--red);
+    margin-left: 2px;
+  }
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--light-gray);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--dark-gray);
+    background: var(--white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+    min-height: 44px;
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(26, 58, 110, 0.1);
+  }
+  .form-group input::placeholder { color: #adb5bd; }
+
+  .guest-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-top: 8px;
+    min-height: 52px;
+  }
+  .btn-submit:hover {
+    background: var(--red-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(191,10,48,0.35);
+  }
+  .btn-submit:active { transform: translateY(0); }
+  .btn-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .form-note {
+    text-align: center;
+    font-size: 12px;
+    color: var(--medium-gray);
+    margin-top: 14px;
+  }
+
+  /* ---- SUCCESS STATE ---- */
+  .success-card {
+    display: none;
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 48px 28px;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  }
+  .success-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+  }
+  .success-card h2 {
+    font-family: var(--font-display);
+    font-size: 30px;
+    color: var(--navy);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .success-card p {
+    font-size: 15px;
+    color: var(--medium-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .success-detail {
+    background: var(--off-white);
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .success-detail p {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--dark-gray);
+  }
+  .success-detail p:last-child { margin-bottom: 0; }
+  .success-detail strong { color: var(--navy); }
+  .success-ticket-badge {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 10px 24px;
+    border-radius: 6px;
+  }
+
+  /* ---- ERROR ---- */
+  .error-msg {
+    display: none;
+    background: #fff0f0;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--red-dark);
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    background: var(--navy-dark);
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ---- MOBILE ---- */
+  @media (max-width: 480px) {
+    .form-row { grid-template-columns: 1fr; }
+    .guest-row { grid-template-columns: 1fr 1fr; }
+    .form-card { padding: 24px 20px; }
+    .success-card { padding: 36px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/YMTBFGIe6LTatpFGulrT/media/9e25d0d2-494c-43e6-8d43-a08f7dcd9f9d.png" alt="TX Posts Logo">
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="event-tag">WATCH PARTY — YOU'RE INVITED</div>
+  <h1>
+    Celebrate<br>
+    <span class="show-name">The American Dream</span>
+  </h1>
+  <p class="hero-sub">Dylan's newest venture — now on television</p>
+
+  <div class="event-details">
+    <div class="event-detail">
+      <span class="event-detail-icon">📅</span>
+      <div class="event-detail-text">
+        <strong>Sunday, May 17, 2025</strong>
+        <span>2:00 PM – 5:00 PM</span>
+      </div>
+    </div>
+    <div class="event-detail">
+      <span class="event-detail-icon">📍</span>
+      <div class="event-detail-text">
+        <strong>Cowtown Brewing Co</strong>
+        <span>1301 E Belknap St, Fort Worth, TX 76102</span>
+      </div>
+    </div>
+    <div class="event-detail">
+      <span class="event-detail-icon">🎉</span>
+      <div class="event-detail-text">
+        <strong>Kid Activities · Food Trucks · Prizes</strong>
+        <span>Something for everyone</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="perks-banner">
+    <p><strong>Every RSVP gets 2 complimentary beer tickets</strong> + a raffle entry for some awesome giveaways. Don't miss out.</p>
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-section">
+
+  <!-- FORM CARD -->
+  <div class="form-card" id="formCard">
+    <h2 class="form-title">SECURE YOUR SPOT</h2>
+    <p class="form-subtitle">Takes 30 seconds — let us know you're coming.</p>
+
+    <form id="rsvpForm" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name <span class="req">*</span></label>
+          <input type="text" id="firstName" name="firstName" placeholder="Dylan" autocomplete="given-name" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name <span class="req">*</span></label>
+          <input type="text" id="lastName" name="lastName" placeholder="King" autocomplete="family-name" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address <span class="req">*</span></label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="req">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="(817) 555-0100" autocomplete="tel" required>
+      </div>
+
+      <div class="guest-row">
+        <div class="form-group">
+          <label for="adults">Adults <span class="req">*</span></label>
+          <select id="adults" name="adults" required>
+            <option value="">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10+">10+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="kids">Kids</label>
+          <select id="kids" name="kids">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6+">6+</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">COUNT ME IN</button>
+      <div class="error-msg" id="errorMsg">Something went wrong. Please try again or text Dylan directly.</div>
+      <p class="form-note">Your info is only used for this event. No spam, ever.</p>
+    </form>
+  </div>
+
+  <!-- SUCCESS CARD -->
+  <div class="success-card" id="successCard">
+    <div class="success-icon">✓</div>
+    <h2>YOU'RE ON THE LIST!</h2>
+    <p>We've got you down. See you Sunday, May 17 at Cowtown Brewing Co — this is going to be a great time.</p>
+    <div class="success-detail">
+      <p><strong>📅 When:</strong> Sunday, May 17 · 2–5 PM</p>
+      <p><strong>📍 Where:</strong> Cowtown Brewing Co, 1301 E Belknap St, Fort Worth TX</p>
+      <p><strong>🍺 Your Perks:</strong> 2 complimentary beer tickets + raffle entry</p>
+    </div>
+    <span class="success-ticket-badge">RSVP CONFIRMED</span>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Presented by TX Posts &nbsp;|&nbsp; Fort Worth, TX</p>
+</footer>
+
+<script>
+  const form = document.getElementById('rsvpForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const errorMsg = document.getElementById('errorMsg');
+  const formCard = document.getElementById('formCard');
+  const successCard = document.getElementById('successCard');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    errorMsg.style.display = 'none';
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const adults = document.getElementById('adults').value;
+    const kids = document.getElementById('kids').value;
+
+    if (!firstName || !lastName || !email || !phone || !adults) {
+      errorMsg.textContent = 'Please fill in all required fields.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      errorMsg.textContent = 'Please enter a valid email address.';
+      errorMsg.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'SUBMITTING...';
+
+    try {
+      const response = await fetch('https://n8n.cnattitle.tech/webhook/txposts-rsvp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, phone, adults, kids })
+      });
+
+      if (response.ok) {
+        formCard.style.display = 'none';
+        successCard.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      errorMsg.textContent = 'Something went wrong. Please try again.';
+      errorMsg.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'COUNT ME IN';
+    }
+  });
+</script>
+</body>
+</html>
