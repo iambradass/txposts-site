@@ -33,6 +33,16 @@
 <!--   FINALIZE 2026-06-29 (Claude Code): stripped all em/en dashes -->
 <!--      from copy; fixed consent has-error border not clearing. -->
 <!-- ============================================================= -->
+<!-- UPDATED 2026-08-12 (Claude Code): -->
+<!--   #5 Install add-ons: new "Supra Install" (+$10, same as the -->
+<!--      lockbox add-on). Checking Lockbox Install reveals a -->
+<!--      required "Lockbox Combo Code" field; checking Supra -->
+<!--      Install reveals a required "Supra Shackle Code" field. -->
+<!--      Payload adds addon_supra + addon_lockbox_code + -->
+<!--      addon_supra_code; codes also fold into the already-mapped -->
+<!--      shackle_code and into Job Notes (no new GHL fields). -->
+<!--   Webhook URL UNCHANGED. -->
+<!-- ============================================================= -->
 <!-- GHL SETUP: paste this ENTIRE file into the page's ONE Custom Code element. -->
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
@@ -1615,6 +1625,30 @@ Continue
 </div>
 </label>
 </div>
+<!-- REQUEST #5 (2026-08-12): Supra install add-on, priced same as a combo lockbox -->
+<div class="addon-item">
+<input type="checkbox" name="addon_supra" id="addon_supra" value="10">
+<label for="addon_supra">
+<div class="addon-check">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+</div>
+<div class="addon-info">
+<div class="addon-name">Supra Install</div>
+<div class="addon-price">+$10</div>
+</div>
+</label>
+</div>
+</div>
+<!-- REQUEST #5 (2026-08-12): conditional code capture so TX POSTS can track each agent's box -->
+<div class="form-group" id="addon-lockbox-code-group" style="display: none;">
+<label>Lockbox Combo Code <span class="required">*</span></label>
+<input type="text" name="addon_lockbox_code" placeholder="e.g. 1234" autocomplete="off">
+<p class="helper-text">We keep your combo on file so we can get back into the box when we come back out.</p>
+</div>
+<div class="form-group" id="addon-supra-code-group" style="display: none;">
+<label>Supra Shackle Code <span class="required">*</span></label>
+<input type="text" name="addon_supra_code" placeholder="e.g. 1234" autocomplete="off">
+<p class="helper-text">We need the shackle code to hang your Supra, and we keep it on file for you.</p>
 </div>
 <div class="rider-selector">
 <label class="rider-selector-label">Riders (Optional)</label>
@@ -2351,6 +2385,23 @@ if (!postType) {
 isValid = false;
 showStepError(3, 'Please select a post type.');
 }
+// REQUEST #5 (2026-08-12): if a lockbox or Supra install is added, we need its code
+[
+{ box: 'addon_lockbox', field: 'addon_lockbox_code', msg: 'Please enter the combo code for your lockbox, or uncheck Lockbox Install if you do not have it handy.' },
+{ box: 'addon_supra', field: 'addon_supra_code', msg: 'Please enter the shackle code for your Supra, or uncheck Supra Install if you do not have it handy.' }
+].forEach(function(pair) {
+var boxEl = document.getElementById(pair.box);
+if (!boxEl || !boxEl.checked) return;
+var codeInput = currentStepEl.querySelector('[name="' + pair.field + '"]');
+if (codeInput && !codeInput.value.trim()) {
+codeInput.classList.add('error');
+if (codeInput.closest('.form-group')) {
+codeInput.closest('.form-group').classList.add('has-error');
+}
+isValid = false;
+showStepError(3, pair.msg);
+}
+});
 } else if (serviceVal === 'remove') {
 ['install_address', 'city', 'zip'].forEach(function(field) {
 var removeInput = currentStepEl.querySelector('#remove-fields [name="' + field + '"]');
@@ -2753,6 +2804,7 @@ if (serviceType === 'install') {
 if (document.getElementById('addon_solar') && document.getElementById('addon_solar').checked) addonsTotal += 15;
 if (document.getElementById('addon_brochure') && document.getElementById('addon_brochure').checked) addonsTotal += 15;
 if (document.getElementById('addon_lockbox') && document.getElementById('addon_lockbox').checked) addonsTotal += 10;
+if (document.getElementById('addon_supra') && document.getElementById('addon_supra').checked) addonsTotal += 10;
 var singleRiders = parseInt(document.getElementById('single_riders') ? document.getElementById('single_riders').value : 0);
 var has3Pack = document.getElementById('addon_riders') ? document.getElementById('addon_riders').checked : false;
 if (has3Pack) {
@@ -2863,7 +2915,16 @@ postRow.style.display = 'flex';
 var addons = [];
 if (document.getElementById('addon_solar') && document.getElementById('addon_solar').checked) addons.push('Solar Light');
 if (document.getElementById('addon_brochure') && document.getElementById('addon_brochure').checked) addons.push('Brochure Box');
-if (document.getElementById('addon_lockbox') && document.getElementById('addon_lockbox').checked) addons.push('Lockbox');
+if (document.getElementById('addon_lockbox') && document.getElementById('addon_lockbox').checked) {
+var lbCodeEl = document.querySelector('[name="addon_lockbox_code"]');
+var lbCodeVal = lbCodeEl ? lbCodeEl.value.trim() : '';
+addons.push('Lockbox' + (lbCodeVal ? ' (code ' + lbCodeVal + ')' : ''));
+}
+if (document.getElementById('addon_supra') && document.getElementById('addon_supra').checked) {
+var spCodeEl = document.querySelector('[name="addon_supra_code"]');
+var spCodeVal = spCodeEl ? spCodeEl.value.trim() : '';
+addons.push('Supra Install' + (spCodeVal ? ' (shackle ' + spCodeVal + ')' : ''));
+}
 if (addons.length > 0) {
 document.getElementById('review-addons').textContent = addons.join(', ');
 addonsRow.style.display = 'flex';
@@ -3043,6 +3104,7 @@ var selected = [];
 if (formData.get('addon_solar')) selected.push('Solar Light');
 if (formData.get('addon_brochure')) selected.push('Brochure Box');
 if (formData.get('addon_lockbox')) selected.push('Lockbox');
+if (formData.get('addon_supra')) selected.push('Supra Install');
 if (hasRiderPack) selected.push('Rider 3-Pack');
 if (!hasRiderPack && singleRiderCount > 0) {
 selected.push(singleRiderCount + ' Single Rider' + (singleRiderCount > 1 ? 's' : ''));
@@ -3191,6 +3253,25 @@ if (storeLockboxChecked) {
 var lockboxNote = 'Remove & store Supra/lockbox (complimentary)' + (shackleCodeVal ? ', shackle code: ' + shackleCodeVal : '');
 notesRaw = notesRaw ? notesRaw + '\n\n' + lockboxNote : lockboxNote;
 }
+// REQUEST #5 (2026-08-12): install add-on lockbox/Supra codes. Folded into the
+// already-mapped shackle_code + notes so no new GHL field mapping is needed.
+var addonLockboxChecked = !!(document.getElementById('addon_lockbox') && document.getElementById('addon_lockbox').checked && serviceType === 'install');
+var addonSupraChecked = !!(document.getElementById('addon_supra') && document.getElementById('addon_supra').checked && serviceType === 'install');
+var addonLockboxCode = addonLockboxChecked ? cleanValue(formData.get('addon_lockbox_code')) : '';
+var addonSupraCode = addonSupraChecked ? cleanValue(formData.get('addon_supra_code')) : '';
+var addonBoxNotes = [];
+if (addonLockboxChecked) addonBoxNotes.push('Lockbox install (combo lockbox)' + (addonLockboxCode ? ', combo code: ' + addonLockboxCode : ''));
+if (addonSupraChecked) addonBoxNotes.push('Supra install' + (addonSupraCode ? ', shackle code: ' + addonSupraCode : ''));
+if (addonBoxNotes.length) {
+var addonBoxNote = addonBoxNotes.join('\n');
+notesRaw = notesRaw ? notesRaw + '\n\n' + addonBoxNote : addonBoxNote;
+}
+if (!shackleCodeVal) {
+var addonCodeParts = [];
+if (addonSupraCode) addonCodeParts.push('Supra: ' + addonSupraCode);
+if (addonLockboxCode) addonCodeParts.push('Lockbox: ' + addonLockboxCode);
+shackleCodeVal = addonCodeParts.join(' | ');
+}
 // "Other -> Lockbox / Supra" standalone service: fold all detail into the
 // already-mapped shackle_code + other_description + notes (no new GHL fields).
 var lockboxState = getLockboxState();
@@ -3232,6 +3313,10 @@ post_type: cleanValue(formData.get('post_type')),
 addon_solar: formData.get('addon_solar') ? 'Yes' : 'No',
 addon_brochure: formData.get('addon_brochure') ? 'Yes' : 'No',
 addon_lockbox: formData.get('addon_lockbox') ? 'Yes' : 'No',
+// REQUEST #5: Supra install add-on + the box codes we now capture for tracking
+addon_supra: formData.get('addon_supra') ? 'Yes' : 'No',
+addon_lockbox_code: addonLockboxCode,
+addon_supra_code: addonSupraCode,
 addon_riders: hasRiderPack ? 'Yes' : 'No',
 selected_addons: selectedAddons,
 selected_addons_csv: selectedAddons.join(', '),
@@ -3369,6 +3454,26 @@ signDisposition.addEventListener('change', function() {
 returnAddressGroup.style.display = this.value === 'return_address' ? 'block' : 'none';
 });
 }
+// REQUEST #5 (2026-08-12): reveal the code field when a lockbox or Supra install is added
+[
+{ box: 'addon_lockbox', group: 'addon-lockbox-code-group', field: 'addon_lockbox_code' },
+{ box: 'addon_supra', group: 'addon-supra-code-group', field: 'addon_supra_code' }
+].forEach(function(pair) {
+var boxEl = document.getElementById(pair.box);
+var groupEl = document.getElementById(pair.group);
+if (!boxEl || !groupEl) return;
+boxEl.addEventListener('change', function() {
+groupEl.style.display = this.checked ? 'block' : 'none';
+if (!this.checked) {
+var codeInput = document.querySelector('[name="' + pair.field + '"]');
+if (codeInput) {
+codeInput.value = '';
+codeInput.classList.remove('error');
+}
+groupEl.classList.remove('has-error');
+}
+});
+});
 // REQUEST #4: show/hide shackle code field based on the storage checkbox
 var storeLockbox = document.getElementById('store_lockbox');
 var shackleGroup = document.getElementById('shackle-code-group');
