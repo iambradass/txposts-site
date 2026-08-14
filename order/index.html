@@ -1805,8 +1805,20 @@ We'll pull your lockbox during removal and keep it safe for your next listing at
 </div>
 </div>
 <div class="form-group">
-<label>Property Address</label>
-<input type="text" name="other_address" placeholder="123 Main Street">
+<label>Property Address <span class="required other-location-required" style="display: none;">*</span></label>
+<input type="text" name="other_address" placeholder="123 Main Street" autocomplete="street-address">
+</div>
+<!-- 2026-08-14: City/ZIP were only captured on install + removal, so every "other"
+     service (rider swaps, repairs, lockbox) landed in GHL with a blank City field. -->
+<div class="form-row">
+<div class="form-group">
+<label>City <span class="required other-location-required" style="display: none;">*</span></label>
+<input type="text" name="city" disabled placeholder="Fort Worth" autocomplete="address-level2">
+</div>
+<div class="form-group">
+<label>ZIP Code <span class="required other-location-required" style="display: none;">*</span></label>
+<input type="text" name="zip" disabled placeholder="76102" inputmode="numeric" pattern="[0-9]*" autocomplete="postal-code">
+</div>
 </div>
 <div class="form-group">
 <label>Please describe what you need</label>
@@ -2471,6 +2483,25 @@ break;
 }
 }
 }
+// 2026-08-14: every "other" service except "Something else" happens at a property,
+// so the address + City + ZIP are required there the same as install/removal.
+if (otherService && isAddressBasedOtherService(otherService.value)) {
+var missingLocation = false;
+['other_address', 'city', 'zip'].forEach(function(field) {
+var otherInput = currentStepEl.querySelector('#other-fields [name="' + field + '"]');
+if (otherInput && !otherInput.value.trim()) {
+otherInput.classList.add('error');
+if (otherInput.closest('.form-group')) {
+otherInput.closest('.form-group').classList.add('has-error');
+}
+missingLocation = true;
+isValid = false;
+}
+});
+if (missingLocation) {
+showStepError(3, 'Please enter the property address, city, and ZIP code.');
+}
+}
 }
 if (!isValid) {
 var firstError = currentStepEl.querySelector('.error');
@@ -2895,7 +2926,17 @@ var cityEl = document.querySelector('#remove-fields [name="city"]');
 var zipEl = document.querySelector('#remove-fields [name="zip"]');
 address = (addrEl ? addrEl.value : '') + ', ' + (cityEl ? cityEl.value : '') + ' ' + (zipEl ? zipEl.value : '');
 } else {
-address = form.other_address.value || 'See notes';
+var otherAddrEl = document.querySelector('#other-fields [name="other_address"]');
+var otherCityEl = document.querySelector('#other-fields [name="city"]');
+var otherZipEl = document.querySelector('#other-fields [name="zip"]');
+var otherStreet = otherAddrEl ? otherAddrEl.value.trim() : '';
+var otherCity = otherCityEl ? otherCityEl.value.trim() : '';
+var otherZip = otherZipEl ? otherZipEl.value.trim() : '';
+if (otherStreet && otherCity) {
+address = otherStreet + ', ' + otherCity + (otherZip ? ' ' + otherZip : '');
+} else {
+address = otherStreet || 'See notes';
+}
 }
 document.getElementById('review-address').textContent = address;
 var postRow = document.getElementById('review-post-row');
@@ -3046,6 +3087,18 @@ if (schedulingSection) {
 schedulingSection.style.display = 'block';
 }
 }
+// Every "other" service except "Something else" is performed at a property, so it
+// needs a real address. "Something else" stays free-text (describe-what-you-need).
+function isAddressBasedOtherService(otherService) {
+return !!otherService && otherService !== 'other';
+}
+function updateOtherLocationRequired() {
+var select = document.getElementById('other_service_select');
+var required = select ? isAddressBasedOtherService(select.value) : false;
+document.querySelectorAll('.other-location-required').forEach(function(el) {
+el.style.display = required ? 'inline' : 'none';
+});
+}
 function getServiceAddress(formData, serviceType) {
 if (serviceType === 'install' || serviceType === 'remove') {
 return {
@@ -3054,10 +3107,12 @@ city: cleanValue(formData.get('city')),
 zip: cleanValue(formData.get('zip'))
 };
 }
+// "other" now carries its own City/ZIP inputs. Only the selected branch's fields
+// are enabled, so these formData keys resolve to the other-fields inputs.
 return {
 address: cleanValue(formData.get('other_address')),
-city: '',
-zip: ''
+city: cleanValue(formData.get('city')),
+zip: cleanValue(formData.get('zip'))
 };
 }
 function getServiceLabel(serviceType, otherService) {
@@ -3442,6 +3497,7 @@ repairNote.style.display = isRepair ? 'block' : 'none';
 }
 var lockboxFlow = document.getElementById('lockbox-flow');
 if (lockboxFlow) lockboxFlow.style.display = this.value === 'lockbox' ? 'block' : 'none';
+updateOtherLocationRequired();
 syncLockboxUI();
 updatePriceSummary();
 });
