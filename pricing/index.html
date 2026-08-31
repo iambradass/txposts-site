@@ -532,6 +532,18 @@
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .service-cta {
+        display: inline-block;
+        margin-top: 16px;
+        color: var(--texas-red);
+        font-weight: 700;
+        font-size: 15px;
+        letter-spacing: 0.5px;
     }
 
     .service-card::before {
@@ -1640,7 +1652,7 @@
             </div>
 
             <div class="services-grid">
-                <div class="service-card">
+                <a class="service-card" href="/faq#placement">
                     <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" aria-hidden="true">
                             <path d="M12 2l7 7-7 7-7-7 7-7z"></path>
@@ -1649,8 +1661,9 @@
                     <h3>PLACEMENT</h3>
                     <p>We place for visibility and common-sense curb appeal. If your HOA/city requires a specific spot,
                         note it in the order.</p>
-                </div>
-                <div class="service-card">
+                    <span class="service-cta">How placement works &rarr;</span>
+                </a>
+                <a class="service-card" href="/faq#rush">
                     <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" aria-hidden="true">
                             <circle cx="12" cy="12" r="10"></circle>
@@ -1659,8 +1672,9 @@
                     <h3>RUSH REQUESTS</h3>
                     <p>Rush depends on schedule and location. Submit the order with "Rush" selected/mentioned and we'll
                         confirm availability.</p>
-                </div>
-                <div class="service-card">
+                    <span class="service-cta">Rush install details &rarr;</span>
+                </a>
+                <a class="service-card" href="/faq#notes">
                     <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" aria-hidden="true">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
@@ -1668,8 +1682,9 @@
                     <h3>NOTES MATTER</h3>
                     <p>Gate codes, lot flags, lockbox instructions, builder restrictions—put it all in the order form
                         notes.</p>
-                </div>
-                <div class="service-card">
+                    <span class="service-cta">What to include &rarr;</span>
+                </a>
+                <a class="service-card" href="/faq#confirmation">
                     <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" aria-hidden="true">
                             <path d="M20 6L9 17l-5-5"></path>
@@ -1677,7 +1692,8 @@
                     <h3>CONFIRMATION</h3>
                     <p>You'll receive confirmation once the request is reviewed. That's your "it's scheduled" signal.
                     </p>
-                </div>
+                    <span class="service-cta">What to expect &rarr;</span>
+                </a>
             </div>
 
             <section class="cta" id="pricing-cta">

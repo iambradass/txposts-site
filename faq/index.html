@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | TX POSTS</title>
+    <meta name="description" content="Answers to what DFW agents ask TX POSTS most: install turnaround, rush options, post removal, pricing, add-ons, sign storage, and service area.">
     <link rel="icon" href="/assets/favicon.png">
     <style>
         html, body {
@@ -479,6 +480,101 @@
     .services {
         padding: var(--section-padding) 0;
         background: var(--white);
+    }
+
+    /* ========== FAQ ACCORDION ========== */
+    .faq-list {
+        max-width: 840px;
+        margin: 0 auto;
+    }
+
+    .faq-cat {
+        font-family: var(--font-display);
+        font-size: 28px;
+        letter-spacing: 2px;
+        color: var(--texas-red);
+        margin: 56px 0 20px;
+    }
+
+    .faq-list .faq-cat:first-child {
+        margin-top: 0;
+    }
+
+    .faq-item {
+        background: var(--white);
+        border: 1px solid var(--light-gray);
+        border-radius: 12px;
+        margin-bottom: 12px;
+        scroll-margin-top: 100px;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .faq-item[open] {
+        border-color: var(--navy);
+        box-shadow: 0 8px 24px rgba(26, 58, 110, 0.08);
+    }
+
+    .faq-item summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 24px;
+        min-height: 44px;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 1.4;
+        color: var(--navy);
+    }
+
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .faq-item summary::after {
+        content: '+';
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--off-white);
+        color: var(--navy);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        text-align: center;
+        transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+
+    .faq-item[open] summary::after {
+        content: '\2212';
+        background: var(--texas-red);
+        color: var(--white);
+    }
+
+    .faq-item .faq-a {
+        padding: 0 24px 22px;
+        color: var(--medium-gray);
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .faq-item .faq-a a {
+        color: var(--texas-red);
+        font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+        .faq-item summary {
+            font-size: 16px;
+            padding: 18px 18px;
+        }
+
+        .faq-item .faq-a {
+            padding: 0 18px 20px;
+        }
     }
 
     .container {
@@ -1452,230 +1548,136 @@
             </button>
         </div>
     </nav>
-
     <section class="page-hero">
         <div class="container">
-            <h1>PRICING<br><span class="highlight" style="color: var(--texas-red);">SIMPLE + CLEAR</span></h1>
-            <p>Two straightforward options. No contracts. No weird fine print. Just sign post service that shows up and
-                gets it done.</p>
+            <h1>QUESTIONS<br><span class="highlight" style="color: var(--texas-red);">STRAIGHT ANSWERS</span></h1>
+            <p>Everything agents ask us about installs, removals, pricing, and scheduling. Don't see your question? Call us or submit your order with notes and we'll sort it out.</p>
             <div class="hero-buttons" style="display:flex; gap:16px; flex-wrap:wrap;">
                 <a href="/order" class="btn btn-primary">Order / Schedule Service</a>
-                <a href="#packages" class="btn btn-secondary">See Packages</a>
+                <a href="/pricing" class="btn btn-secondary">See Pricing</a>
             </div>
-            <div class="pill-row" aria-label="Pricing highlights">
-                <span class="pill">Wood post: panel + riders included</span>
-                <span class="pill">Your metal frame: discounted rate</span>
-                <span class="pill">Removal options available</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="packages">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Packages</span>
-                <h2 class="section-title">TWO SIMPLE CHOICES</h2>
-                <p class="section-subtitle">Choose your setup and submit your request. We'll confirm the schedule
-                    window.</p>
-            </div>
-
-            <div class="pricing-grid">
-                <div class="pricing-card featured" id="wood">
-                    <div class="pricing-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                    </div>
-                    <h3>TX POSTS WOOD</h3>
-                    <div class="price">$65</div>
-                    <p class="price-note">per installation</p>
-                    <ul class="pricing-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Professional 4x4 wood post</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Panel & rider hanging included</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Free removal when sold (per your policy)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Maintenance & repairs (as needed)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Free sign storage included</li>
-                    </ul>
-                    <a href="/order" class="btn btn-primary">Request Installation</a>
-                </div>
-
-                <div class="pricing-card" id="metal">
-                    <div class="pricing-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                        </svg>
-                    </div>
-                    <h3>YOUR METAL FRAME</h3>
-                    <div class="price">$55</div>
-                    <p class="price-note">per installation</p>
-                    <ul class="pricing-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>You supply the metal frame</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Professional installation</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Removal when sold (see order notes)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Maintenance if needed (per policy)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                aria-hidden="true">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>Free sign storage included</li>
-                    </ul>
-                    <a href="/order" class="btn btn-primary">Request Installation</a>
-                </div>
+            <div class="pill-row" aria-label="FAQ highlights">
+                <span class="pill">Install within 3 business days</span>
+                <span class="pill">Free removal when sold</span>
+                <span class="pill">Tarrant County focused</span>
             </div>
         </div>
     </section>
 
-    <!-- Add-Ons Section -->
-    <section class="addons-section" id="addons">
+    <section class="services" id="faq">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Optional Add-Ons</span>
-                <h2 class="section-title">UPGRADE YOUR SIGN INSTALLATION</h2>
-                <p class="section-subtitle">Add these at install time—no need to schedule separately.</p>
+            <div class="faq-list">
+
+                <h2 class="faq-cat">SCHEDULING</h2>
+
+                <details class="faq-item" id="turnaround">
+                    <summary>How fast can you get a post in the ground?</summary>
+                    <div class="faq-a">
+                        <p>Standard requests are completed within 3 business days of your selected start date. Need it sooner? Choose the next-day option in the <a href="/order">order form</a>: requests submitted between 5:00 AM and 5:00 PM CT are installed the next business day. Requests outside that window are installed the following business day.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="rush">
+                    <summary>Do you offer rush installs?</summary>
+                    <div class="faq-a">
+                        <p>Yes. Rush availability depends on the schedule and your listing's location. Pick the next-day option in the <a href="/order?service=install">order form</a>, or mention your deadline in the notes, and we'll confirm availability.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="confirmation">
+                    <summary>How do I know my request is actually scheduled?</summary>
+                    <div class="faq-a">
+                        <p>You'll receive a confirmation within 24 hours once your request is reviewed. That confirmation is your "it's scheduled" signal. Nothing yet? Call us at <a href="tel:+18177608288">(817) 760-8288</a>.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="notes">
+                    <summary>What should I put in the order notes?</summary>
+                    <div class="faq-a">
+                        <p>Anything we need to get it right the first time: gate codes, lot flags, lockbox instructions, builder or HOA restrictions, and where you want panels and riders returned. More detail up front means fewer callbacks and no delays.</p>
+                    </div>
+                </details>
+
+                <h2 class="faq-cat">PLACEMENT &amp; COVERAGE</h2>
+
+                <details class="faq-item" id="placement">
+                    <summary>Where on the property will you place the post?</summary>
+                    <div class="faq-a">
+                        <p>We place for maximum visibility and common-sense curb appeal. If your HOA or city requires a specific spot, note it in the order and we'll follow it.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="coverage">
+                    <summary>What areas do you serve?</summary>
+                    <div class="faq-a">
+                        <p>We focus on Tarrant County: Fort Worth, Arlington, Mansfield, Keller, Southlake, Grapevine, North Richland Hills, Colleyville, Bedford, Euless, Hurst, and nearby. Service expands to the full DFW Metroplex in 2026. See the <a href="/#service-area">coverage map</a>.</p>
+                    </div>
+                </details>
+
+                <h2 class="faq-cat">PRICING &amp; POSTS</h2>
+
+                <details class="faq-item" id="cost">
+                    <summary>How much does an install cost?</summary>
+                    <div class="faq-a">
+                        <p>$65 for our TX Posts wood post with panel and rider hanging included, $65 to install your PVC or aluminum post, $55 for your metal frame, and $60 for custom posts. Every option includes free removal when the listing sells. Full breakdown on the <a href="/pricing">pricing page</a>.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="own-post">
+                    <summary>Can you install a post or frame I already own?</summary>
+                    <div class="faq-a">
+                        <p>Yes. We install your PVC or aluminum post for $65, your metal frame for $55 (we can store the frame between listings too), and custom or specialty posts for $60.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="addons">
+                    <summary>What add-ons can I get?</summary>
+                    <div class="faq-a">
+                        <p>Solar light ($15), brochure box ($15), extra riders ($10 each, first rider included), plus lockbox and Supra mounting. Add them right in the order form at install time, no separate trip needed. See the <a href="/pricing#addons">add-ons section</a> on the pricing page.</p>
+                    </div>
+                </details>
+
+                <h2 class="faq-cat">REMOVAL &amp; AFTER CLOSING</h2>
+
+                <details class="faq-item" id="removal">
+                    <summary>My listing sold. How do I get the post removed?</summary>
+                    <div class="faq-a">
+                        <p>Congrats! Submit a <a href="/order?service=remove">removal request</a> and we'll pull the post within 3 business days of your selected date, with a next-day option if you need it gone fast. Removal is free for every post type when the listing sells.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="panels">
+                    <summary>What happens to my panels and riders after removal?</summary>
+                    <div class="faq-a">
+                        <p>Your call. We can keep them in TX POSTS storage for free, return them to your brokerage, or drop them at an address you give us. Riders can also be left on the front porch at pickup.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="storage">
+                    <summary>Do you store signs between listings?</summary>
+                    <div class="faq-a">
+                        <p>Yes, free storage is available. Mention it in your order and we'll hold your panels, riders, or metal frame until your next listing.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item" id="repairs">
+                    <summary>A storm knocked my post crooked. Now what?</summary>
+                    <div class="faq-a">
+                        <p>Submit a request through the <a href="/order?service=other">order form</a> and pick the repair option. Repairs and straightening are free on TX Posts wood posts. For posts you own: $45 for PVC or aluminum, $35 for metal frames, $40 for custom posts.</p>
+                    </div>
+                </details>
+
             </div>
 
-            <div class="addons-grid">
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <path d="M12 1v6m0 6v6M1 12h6m6 0h6"></path>
-                        </svg>
-                    </div>
-                    <h3>SOLAR LIGHT</h3>
-                    <div class="addon-price">$15</div>
-                    <p>Illuminates your sign at night. Solar-powered, no wiring needed. Weather-resistant.</p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                        </svg>
-                    </div>
-                    <h3>BROCHURE BOX</h3>
-                    <div class="addon-price">$15</div>
-                    <p>Weather-proof box attaches to post. Holds your listing brochures or flyers for buyers.</p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </div>
-                    <h3>LOCKBOX</h3>
-                    <div class="addon-price">$10</div>
-                    <p>Secure key storage for showing access. Mounts to post. Supra-compatible.</p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <path d="M14 2v6h6"></path>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <line x1="10" y1="9" x2="8" y2="9"></line>
-                        </svg>
-                    </div>
-                    <h3>ADDITIONAL RIDERS</h3>
-                    <div class="addon-price">$10</div>
-                    <p>Need more than one rider? Add extra riders for just $10 each. First rider is included.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="details" style="padding-top: 0;">
-        <div class="container">
-            <div class="section-header" style="margin-top: 0;">
-                <span class="section-tag">Details</span>
-                <h2 class="section-title">WHAT'S INCLUDED (AND WHAT ISN'T)</h2>
-                <p class="section-subtitle">Real-world notes so you don't get surprised in the field.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" aria-hidden="true">
-                            <path d="M12 2l7 7-7 7-7-7 7-7z"></path>
-                            <path d="M12 16v6"></path>
-                        </svg></div>
-                    <h3>PLACEMENT</h3>
-                    <p>We place for visibility and common-sense curb appeal. If your HOA/city requires a specific spot,
-                        note it in the order.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 6v6l4 2"></path>
-                        </svg></div>
-                    <h3>RUSH REQUESTS</h3>
-                    <p>Rush depends on schedule and location. Submit the order with "Rush" selected/mentioned and we'll
-                        confirm availability.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" aria-hidden="true">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg></div>
-                    <h3>NOTES MATTER</h3>
-                    <p>Gate codes, lot flags, lockbox instructions, builder restrictions—put it all in the order form
-                        notes.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" aria-hidden="true">
-                            <path d="M20 6L9 17l-5-5"></path>
-                        </svg></div>
-                    <h3>CONFIRMATION</h3>
-                    <p>You'll receive confirmation once the request is reviewed. That's your "it's scheduled" signal.
-                    </p>
-                </div>
-            </div>
-
-            <section class="cta" id="pricing-cta">
+            <section class="cta" id="faq-cta">
                 <div class="container">
                     <div class="cta-content">
-                        <span class="section-tag">Ready to schedule?</span>
-                        <h2>SUBMIT YOUR ORDER</h2>
-                        <p>Pick your package, drop the address, and we'll take it from there.</p>
+                        <span class="section-tag">Still have a question?</span>
+                        <h2>JUST ASK</h2>
+                        <p>Call <a href="tel:+18177608288" style="color: inherit;">(817) 760-8288</a> or submit your order with notes and we'll handle the rest.</p>
                         <div class="cta-buttons">
-                            <a href="/order" class="btn btn-primary">Request Installation</a>
-                            <a href="/services" class="btn btn-secondary">View Services</a>
+                            <a href="/order" class="btn btn-primary">Request Service</a>
+                            <a href="/pricing" class="btn btn-secondary">See Pricing</a>
                         </div>
                     </div>
                 </div>
@@ -1807,6 +1809,40 @@
 
         setMobileMenuOpen(false);
     }
+
+    // Deep links like /faq#removal open the targeted question
+    function openFaqFromHash() {
+        var id = window.location.hash.slice(1);
+        if (!id) return;
+        var el = document.getElementById(id);
+        if (el && el.tagName === 'DETAILS') {
+            el.open = true;
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    window.addEventListener('hashchange', openFaqFromHash);
+    openFaqFromHash();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How fast can you get a post in the ground?", "acceptedAnswer": {"@type": "Answer", "text": "Standard requests are completed within 3 business days of your selected start date. Requests submitted between 5:00 AM and 5:00 PM CT can be installed the next business day with the next-day option."}},
+    {"@type": "Question", "name": "Do you offer rush installs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Rush availability depends on the schedule and your listing's location. Pick the next-day option in the order form or mention your deadline in the notes and we'll confirm availability."}},
+    {"@type": "Question", "name": "How do I know my request is actually scheduled?", "acceptedAnswer": {"@type": "Answer", "text": "You'll receive a confirmation within 24 hours once your request is reviewed. That confirmation is your scheduled signal."}},
+    {"@type": "Question", "name": "What should I put in the order notes?", "acceptedAnswer": {"@type": "Answer", "text": "Gate codes, lot flags, lockbox instructions, builder or HOA restrictions, and where you want panels and riders returned."}},
+    {"@type": "Question", "name": "Where on the property will you place the post?", "acceptedAnswer": {"@type": "Answer", "text": "We place for maximum visibility and common-sense curb appeal. If your HOA or city requires a specific spot, note it in the order and we'll follow it."}},
+    {"@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": {"@type": "Answer", "text": "We focus on Tarrant County: Fort Worth, Arlington, Mansfield, Keller, Southlake, Grapevine, North Richland Hills, Colleyville, Bedford, Euless, Hurst, and nearby. Service expands to the full DFW Metroplex in 2026."}},
+    {"@type": "Question", "name": "How much does an install cost?", "acceptedAnswer": {"@type": "Answer", "text": "$65 for the TX Posts wood post with panel and rider hanging included, $65 to install your PVC or aluminum post, $55 for your metal frame, and $60 for custom posts. Every option includes free removal when the listing sells."}},
+    {"@type": "Question", "name": "Can you install a post or frame I already own?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We install your PVC or aluminum post for $65, your metal frame for $55, and custom or specialty posts for $60."}},
+    {"@type": "Question", "name": "What add-ons can I get?", "acceptedAnswer": {"@type": "Answer", "text": "Solar light ($15), brochure box ($15), extra riders ($10 each, first rider included), plus lockbox and Supra mounting, all added at install time."}},
+    {"@type": "Question", "name": "My listing sold. How do I get the post removed?", "acceptedAnswer": {"@type": "Answer", "text": "Submit a removal request through the order form and we'll pull the post within 3 business days of your selected date, with a next-day option available. Removal is free for every post type when the listing sells."}},
+    {"@type": "Question", "name": "What happens to my panels and riders after removal?", "acceptedAnswer": {"@type": "Answer", "text": "We can keep them in TX POSTS storage for free, return them to your brokerage, or drop them at an address you give us. Riders can also be left on the front porch at pickup."}},
+    {"@type": "Question", "name": "Do you store signs between listings?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, free storage is available. Mention it in your order and we'll hold your panels, riders, or metal frame until your next listing."}},
+    {"@type": "Question", "name": "A storm knocked my post crooked. Now what?", "acceptedAnswer": {"@type": "Answer", "text": "Submit a request through the order form and pick the repair option. Repairs and straightening are free on TX Posts wood posts. For posts you own: $45 for PVC or aluminum, $35 for metal frames, $40 for custom posts."}}
+  ]
+}
 </script>
 </body>
 </html>
