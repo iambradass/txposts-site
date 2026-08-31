@@ -3482,6 +3482,15 @@ ensureViewportMetaTag();
 setMobileNavOpen(false);
 updateProgress();
 setupServiceTypeToggle();
+var serviceParam = cleanValue(new URLSearchParams(window.location.search).get('service')).toLowerCase();
+var serviceParamMap = { install: 'service_install', installation: 'service_install', remove: 'service_remove', removal: 'service_remove', other: 'service_other' };
+if (serviceParamMap[serviceParam] && !document.querySelector('input[name="service_type"]:checked')) {
+var preselectRadio = document.getElementById(serviceParamMap[serviceParam]);
+if (preselectRadio) {
+preselectRadio.checked = true;
+preselectRadio.dispatchEvent(new Event('change', { bubbles: true }));
+}
+}
 setupSchedulingToggle();
 setupDatePickers();
 setupAddonsToggle();

@@ -531,6 +531,18 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .service-cta {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--texas-red);
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.5px;
         }
 
         .service-card::before {
@@ -1420,7 +1432,7 @@
             <div class="two-col">
                 <div>
                     <div class="services-grid">
-                        <div class="service-card" id="post-installation">
+                        <a class="service-card" id="post-installation" href="/order?service=install">
                             <div class="service-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1430,9 +1442,10 @@
                             <h3>POST INSTALLATION</h3>
                             <p>Professional in-ground install: level, secure, and placed for maximum visibility and curb
                                 appeal.</p>
-                        </div>
+                            <span class="service-cta">Request an install &rarr;</span>
+                        </a>
 
-                        <div class="service-card" id="panel-riders">
+                        <a class="service-card" id="panel-riders" href="/order?service=install">
                             <div class="service-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -1442,9 +1455,10 @@
                             </div>
                             <h3>PANEL & RIDER HANGING</h3>
                             <p>We hang your main panel and riders straight and clean—no crooked “DIY vibes.”</p>
-                        </div>
+                            <span class="service-cta">Request an install &rarr;</span>
+                        </a>
 
-                        <div class="service-card" id="post-removal">
+                        <a class="service-card" id="post-removal" href="/order?service=remove">
                             <div class="service-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="3 6 5 6 21 6"></polyline>
@@ -1456,9 +1470,10 @@
                             <h3>POST REMOVAL</h3>
                             <p>When it’s sold, we pull the post and return panels/riders per your notes. No mess left
                                 behind.</p>
-                        </div>
+                            <span class="service-cta">Request a removal &rarr;</span>
+                        </a>
 
-                        <div class="service-card" id="rush-service">
+                        <a class="service-card" id="rush-service" href="/order?service=install">
                             <div class="service-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <circle cx="12" cy="12" r="10"></circle>
@@ -1467,9 +1482,10 @@
                             </div>
                             <h3>RUSH SERVICE</h3>
                             <p>Need it fast? Add a rush request in the order form and we’ll confirm availability.</p>
-                        </div>
+                            <span class="service-cta">Request a rush install &rarr;</span>
+                        </a>
 
-                        <div class="service-card" id="maintenance">
+                        <a class="service-card" id="maintenance" href="/order?service=other">
                             <div class="service-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path
@@ -1481,9 +1497,10 @@
                             <h3>MAINTENANCE & REPAIRS</h3>
                             <p>Storm happen? Rider missing? Note it in your request—maintenance options depend on post
                                 type.</p>
-                        </div>
+                            <span class="service-cta">Request a repair &rarr;</span>
+                        </a>
 
-                        <div class="service-card" id="storage">
+                        <a class="service-card" id="storage" href="/order?service=other">
                             <div class="service-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path
@@ -1495,7 +1512,8 @@
                             </div>
                             <h3>SIGN STORAGE</h3>
                             <p>Need storage between listings? Mention it in the order form—availability varies.</p>
-                        </div>
+                            <span class="service-cta">Request storage &rarr;</span>
+                        </a>
                     </div>
 
                     <section class="how-it-works" style="margin-top: 80px;" id="how-it-works">
