@@ -2,6 +2,9 @@ Options -Indexes
 DirectorySlash Off
 RewriteEngine On
 
+# Search Console verification file: serve as-is, never redirect
+RewriteRule ^google[0-9a-f]+\.html$ - [L]
+
 # Force HTTPS (skipped for local testing)
 RewriteCond %{HTTP_HOST} !^(localhost|127\.)
 RewriteCond %{HTTPS} !=on
